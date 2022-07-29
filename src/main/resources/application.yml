@@ -1,0 +1,26 @@
+# Anything that goes here is made globally for all profiles.
+spring:
+  application:
+    name: carts
+
+---
+# Anything that goes here is made specifically for dev's profile.
+spring:
+  profiles: dev
+
+---
+# Anything that goes here is made specifically for clouds's profile.
+# Cloud is the default profile that Google Clound Foundry makes your application use if you do not override it.
+spring:
+  profiles: cloud
+
+---
+# Anything that goes here is made specifically for local's profile.
+spring:
+  profiles: local, default
+  data:
+    mongodb:
+      uri: mongodb://iware_cart_service:iwarecartpwd@35.188.166.108/iware_carts
+      database: iware_carts
+server:
+  port: 8080
