@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Login Page
+        </title>
+        <link rel="stylesheet" href="login_stylesheet.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css?family=Molle:400italic" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+        <script src="login_backend.js"></script>
+    </head>
+
+    <body>
+
+        <div class="login">
+            <h1 id="login">
+                Login
+            </h1>
+
+            <div>
+                <input type="text" id="email_field" class="login_field" onkeypress="onEmailType()" name="email_field" placeholder="Email">
+            </div>
+
+            <p id= "missing_email" class="missing_field_error_text"></p>
+
+            <div>
+                <input type="password" id="pwd_field" class="login_field" onkeypress="onPwdType()" name="email_field" placeholder="Password">
+            </div>
+
+            <p id= "missing_pwd" class="missing_field_error_text"></p>
+
+            <p class="error_text" id="invalid_creds_text"></p>
+
+            <div class="sign_and_submit" align="right">
+                <div style="display: inline-block"> <button type="button" class="signup_btn" onclick="openSignUpPage()">Sign Up</button> </div>
+                <div style="display: inline-block"> <button type="button" class="submit_btn" onclick="submitCredentials()">Submit</button> </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

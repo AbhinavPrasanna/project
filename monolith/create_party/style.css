@@ -1,0 +1,91 @@
+body {
+    background-color: #f1f7fa;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+.error {
+    
+}
+
+button {
+
+}
+
+#logout {
+
+}
+
+#upload > button {
+
+}
+
+#blue-foot {
+
+}
+
+#red {
+
+}
+
+.nav {
+
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        'party-name party-name location location right-side right-side'
+        'capacity price price price right-side right-side'
+        'start-date end-date end-date end-date right-side right-side'
+        'start-time end-time end-time end-time right-side right-side'
+        'foot foot foot foot foot foot';
+}
+
+
+
+.right-side {
+    grid-area: right-side;
+}
+
+.party-name {
+    grid-area: party-name;
+}
+
+.location {
+    grid-area: location;
+}
+
+.capacity {
+    grid-area: capacity;
+}
+
+.price {
+    grid-area: price;
+}
+
+.start-date {
+    grid-area: start-date;
+}
+
+.end-date {
+    grid-area: end-date;
+}
+
+.start-time {
+    grid-area: start-time;
+}
+
+.end-time {
+    grid-area: end-time;
+}
+
+.foot {
+    grid-area: foot;
+}

@@ -1,0 +1,133 @@
+div.login {
+    width: 336px;
+}
+
+#login {
+    width: 336px;
+    height: 45px;
+    
+    font-family: 'Molle';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 90px;
+    text-align: center;
+    
+    color: #00B2B2;
+
+    align-self: center;
+}
+
+.login_field {
+    box-sizing: border-box;
+
+    width: 336px;
+    height: 57px;
+
+    background: #FAFAFA;
+    border: 1px solid #00B2B2;
+    border-radius: 10px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+
+    padding-left: 15px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    height: 15px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: 0.025em;
+
+    color: #E6E6E6
+}
+
+p.missing_field_error_text {
+    height: 15px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: 0.025em;
+
+    margin-top: 5px;
+
+    color: #FF6B89;
+}
+
+p.error_text {
+    height: 15px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: 0.025em;
+
+    color: #FF6B89;
+}
+
+.signup_btn {
+    width: 101px;
+    height: 51px;
+
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.025em;
+
+    color: rgba(0, 0, 0, 0.6);
+
+    background: transparent;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+} 
+
+.submit_btn {
+    width: 101px;
+    height: 51px;
+
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.025em;
+
+    /* padding: 11px; */
+
+    color: #ffffff;
+    background: #00B2B2;
+
+    border: none;
+    border-radius: 10px;
+}
+
+button.submit_btn:hover {
+    background-color: #029a9a
+} 
+
+button.submit_btn:active {
+  background-color: #029a9a;
+  transform: scale(0.97);
+}
+
+
+/* Draw element outline -> border-style: solid; border-width: thin; border-color: #000000; */

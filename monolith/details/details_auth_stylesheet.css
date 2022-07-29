@@ -1,0 +1,193 @@
+.navBar {
+    position: relative;
+}
+
+body {
+    background-color: #F1F7FA;
+    min-width: 950px;
+    width: auto;
+    /* width: 925px; */
+}
+
+.logo {
+    position: absolute;
+    top: 41px;
+    left: 42px;
+    width: 395px;
+    height: 77px;
+    font-family: 'Molle', cursive;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 90px;
+    text-align: center;
+    color: #FFB732;
+}
+
+#create_party_btn {
+    width: 150px;
+    height: 55px;
+    position: absolute;
+
+    height: 51px;
+    font-family: 'Baloo 2', cursive;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 38px;
+    align-items: center;
+    text-align: center;
+    top: 54px;
+    right: 240px;
+
+    border: none;
+    background: #FF6B89;
+    border-radius: 10px;
+
+    color: #FFFFFF;
+}
+
+#logout_btn {
+    position: absolute;
+    width: 125px;
+    height: 59px;
+    background: #FFB732;
+    border: transparent;
+    border-radius: 10px;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    top: 50px;
+    right: 90px;
+    align-items: center;
+    /* letter-spacing: 0.025em; */
+    color: #FFFFFF;
+}
+
+#profile_btn {
+    position: absolute;
+    width: 103px;
+    height: 59px;
+
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+
+    display: flex;
+    align-items: center;
+    border: transparent;
+    text-align: center;
+    right: 388px;
+    align-items: center;
+    background: none;
+    top: 50px;
+    letter-spacing: 0.025em;
+
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.info {
+    justify-content: center;
+    margin-left: 50%;
+    /* display: flex; */
+    padding-top: 250px;
+}
+
+.info_text {
+    justify-content: center;
+    height: 150px;
+    text-align: center;
+}
+
+.party_goers {
+    justify-content: center;
+    height: 150px;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.spots_left {
+    justify-content: center;
+    height: 150px;
+    text-align: center;
+    padding-top: 60px;
+
+}
+
+#users_pic {
+    width: 71px;
+    height: 71px;
+    filter: invert(64%) sepia(94%) saturate(4019%) hue-rotate(145deg) brightness(95%) contrast(101%);
+}
+
+#profile_pic {
+    width: 71px;
+    height: 71px;
+}
+
+#hourglass_pic {
+    width: 71px;
+    height: 71px;
+    filter: invert(64%) sepia(94%) saturate(4019%) hue-rotate(145deg) brightness(95%) contrast(101%);
+}
+
+#profile_name {
+    /* width: 350px; */
+    height: 45px;
+
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 77px;
+
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+
+    margin-top: 0px;
+
+    align-self: center;
+    padding-bottom: 72px;
+}
+
+#party_goers_id {
+    /* width: 350px; */
+    height: 45px;
+
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 77px;
+
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+
+    margin-top: 0px;
+
+    align-self: center;
+    padding-bottom: 72px;
+}
+
+#spots_left_id {
+    /* width: 350px; */
+    height: 45px;
+
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 77px;
+
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+
+    margin-top: 0px;
+
+    align-self: center;
+    padding-bottom: 72px;
+}

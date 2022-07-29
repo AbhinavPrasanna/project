@@ -1,0 +1,151 @@
+
+
+/*.images {
+height: 365px;
+width: 243px;
+}*/
+.tile {
+    position: relative;
+    
+}
+
+.grid-container {
+    display: grid;
+    row-gap: 426px;
+}
+
+.grid-1 {
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.grid-2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.grid-3 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.grid-4 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.image_1 {
+box-sizing: border-box;
+position: absolute;
+width: 365px;
+height: 243px;
+object-fit: cover;
+border: 1px solid #00B2B2;
+}
+
+.Rectangle_Name {
+box-sizing: border-box;
+position: absolute;
+width: 257px;
+height: 46px;
+background: #FFFFFF;
+border: 1px solid #00B2B2;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.title_box {
+position: absolute;
+width: 245px;
+height: 46px;
+font-family: 'Baloo 2';
+font-style: bold;
+font-weight: 700;
+font-size: 24px;
+line-height: 38px;
+color: rgba(0, 0, 0, 0.6);
+margin-top: 175px;
+margin-left: -6px;
+padding: 7px;
+}
+
+
+.Rectangle_Info {
+    box-sizing: border-box;
+    position: absolute;
+    width: 365px;
+    height: 132px;
+    background: #FFFFFF;
+    border: 1px solid #00B2B2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 243px;
+}
+
+.date_time {
+    position: absolute;
+    width: 70px;
+    height: 46px;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(0, 0, 0, 0.6);
+    padding-top: 7px;
+    padding-left: 12px;
+}
+
+.location {
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: right;
+    color: rgba(0, 0, 0, 0.6);
+    margin-left: 251px;
+    padding-right: 14px;
+    padding-top: 10px;
+}
+
+.caption{
+    position: absolute;
+    width: 339px;
+    height: 57px;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 75px;
+    padding-left: 12px;
+    padding-right: 14px;
+}
+
+.twentyfive {
+    position: absolute;
+    text-align: center;
+    padding-top: 20px;
+    width: 43px;
+    height: 37px;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 38px;
+    color: #FFFFFF;
+}
+
+.star {
+    /*position: absolute;*/
+    width: 80px;
+    height: 60px;
+    background: #FFB732;
+    border-radius: 50%;
+    display: inline-block;
+}
