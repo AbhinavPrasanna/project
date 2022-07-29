@@ -1,0 +1,301 @@
+73eaeccbb2057cc13bedd2333f4fdd36
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "FontDisplay", {
+  enumerable: true,
+  get: function get() {
+    return _Font.FontDisplay;
+  }
+});
+exports.isLoaded = isLoaded;
+exports.isLoading = isLoading;
+exports.loadAsync = loadAsync;
+exports.processFontFamily = processFontFamily;
+exports.unloadAllAsync = unloadAllAsync;
+exports.unloadAsync = unloadAsync;
+
+var _expoModulesCore = require("expo-modules-core");
+
+var _ExpoFontLoader = _interopRequireDefault(require("./ExpoFontLoader"));
+
+var _Font = require("./Font.types");
+
+var _FontLoader = require("./FontLoader");
+
+function _regeneratorRuntime() { "use strict"; _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == typeof value && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator.return && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, catch: function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+
+var loaded = {};
+var loadPromises = {};
+
+function processFontFamily(fontFamily) {
+  if (!fontFamily || !(0, _FontLoader.fontFamilyNeedsScoping)(fontFamily)) {
+    return fontFamily;
+  }
+
+  if (!isLoaded(fontFamily)) {
+    if (__DEV__) {
+      if (isLoading(fontFamily)) {
+        console.error("You started loading the font \"" + fontFamily + "\", but used it before it finished loading. You need to wait for Font.loadAsync to complete before using the font.");
+      } else {
+        console.error("fontFamily \"" + fontFamily + "\" is not a system font and has not been loaded through Font.loadAsync.\n\n- If you intended to use a system font, make sure you typed the name correctly and that it is supported by your device operating system.\n\n- If this is a custom font, be sure to load it with Font.loadAsync.");
+      }
+    }
+
+    return 'System';
+  }
+
+  return "ExpoFont-" + (0, _FontLoader.getNativeFontName)(fontFamily);
+}
+
+function isLoaded(fontFamily) {
+  return fontFamily in loaded;
+}
+
+function isLoading(fontFamily) {
+  return fontFamily in loadPromises;
+}
+
+function loadAsync(fontFamilyOrFontMap, source) {
+  var fontMap, names;
+  return _regeneratorRuntime().async(function loadAsync$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          if (!(typeof fontFamilyOrFontMap === 'object')) {
+            _context.next = 8;
+            break;
+          }
+
+          if (!source) {
+            _context.next = 3;
+            break;
+          }
+
+          throw new _expoModulesCore.CodedError("ERR_FONT_API", "No fontFamily can be used for the provided source: " + source + ". The second argument of `loadAsync()` can only be used with a `string` value as the first argument.");
+
+        case 3:
+          fontMap = fontFamilyOrFontMap;
+          names = Object.keys(fontMap);
+          _context.next = 7;
+          return _regeneratorRuntime().awrap(Promise.all(names.map(function (name) {
+            return loadFontInNamespaceAsync(name, fontMap[name]);
+          })));
+
+        case 7:
+          return _context.abrupt("return");
+
+        case 8:
+          _context.next = 10;
+          return _regeneratorRuntime().awrap(loadFontInNamespaceAsync(fontFamilyOrFontMap, source));
+
+        case 10:
+          return _context.abrupt("return", _context.sent);
+
+        case 11:
+        case "end":
+          return _context.stop();
+      }
+    }
+  }, null, null, null, Promise);
+}
+
+function loadFontInNamespaceAsync(fontFamily, source) {
+  var asset;
+  return _regeneratorRuntime().async(function loadFontInNamespaceAsync$(_context3) {
+    while (1) {
+      switch (_context3.prev = _context3.next) {
+        case 0:
+          if (source) {
+            _context3.next = 2;
+            break;
+          }
+
+          throw new _expoModulesCore.CodedError("ERR_FONT_SOURCE", "Cannot load null or undefined font source: { \"" + fontFamily + "\": " + source + " }. Expected asset of type `FontSource` for fontFamily of name: \"" + fontFamily + "\"");
+
+        case 2:
+          if (!loaded[fontFamily]) {
+            _context3.next = 4;
+            break;
+          }
+
+          return _context3.abrupt("return");
+
+        case 4:
+          if (!loadPromises.hasOwnProperty(fontFamily)) {
+            _context3.next = 6;
+            break;
+          }
+
+          return _context3.abrupt("return", loadPromises[fontFamily]);
+
+        case 6:
+          asset = (0, _FontLoader.getAssetForSource)(source);
+
+          loadPromises[fontFamily] = function _callee() {
+            return _regeneratorRuntime().async(function _callee$(_context2) {
+              while (1) {
+                switch (_context2.prev = _context2.next) {
+                  case 0:
+                    _context2.prev = 0;
+                    _context2.next = 3;
+                    return _regeneratorRuntime().awrap((0, _FontLoader.loadSingleFontAsync)(fontFamily, asset));
+
+                  case 3:
+                    loaded[fontFamily] = true;
+
+                  case 4:
+                    _context2.prev = 4;
+                    delete loadPromises[fontFamily];
+                    return _context2.finish(4);
+
+                  case 7:
+                  case "end":
+                    return _context2.stop();
+                }
+              }
+            }, null, null, [[0,, 4, 7]], Promise);
+          }();
+
+          _context3.next = 10;
+          return _regeneratorRuntime().awrap(loadPromises[fontFamily]);
+
+        case 10:
+        case "end":
+          return _context3.stop();
+      }
+    }
+  }, null, null, null, Promise);
+}
+
+function unloadAllAsync() {
+  var _i, _Object$keys, fontFamily;
+
+  return _regeneratorRuntime().async(function unloadAllAsync$(_context4) {
+    while (1) {
+      switch (_context4.prev = _context4.next) {
+        case 0:
+          if (_ExpoFontLoader.default.unloadAllAsync) {
+            _context4.next = 2;
+            break;
+          }
+
+          throw new _expoModulesCore.UnavailabilityError('expo-font', 'unloadAllAsync');
+
+        case 2:
+          if (!Object.keys(loadPromises).length) {
+            _context4.next = 4;
+            break;
+          }
+
+          throw new _expoModulesCore.CodedError("ERR_UNLOAD", "Cannot unload fonts while they're still loading: " + Object.keys(loadPromises).join(', '));
+
+        case 4:
+          for (_i = 0, _Object$keys = Object.keys(loaded); _i < _Object$keys.length; _i++) {
+            fontFamily = _Object$keys[_i];
+            delete loaded[fontFamily];
+          }
+
+          _context4.next = 7;
+          return _regeneratorRuntime().awrap(_ExpoFontLoader.default.unloadAllAsync());
+
+        case 7:
+        case "end":
+          return _context4.stop();
+      }
+    }
+  }, null, null, null, Promise);
+}
+
+function unloadAsync(fontFamilyOrFontMap, options) {
+  var fontMap, names;
+  return _regeneratorRuntime().async(function unloadAsync$(_context5) {
+    while (1) {
+      switch (_context5.prev = _context5.next) {
+        case 0:
+          if (_ExpoFontLoader.default.unloadAsync) {
+            _context5.next = 2;
+            break;
+          }
+
+          throw new _expoModulesCore.UnavailabilityError('expo-font', 'unloadAsync');
+
+        case 2:
+          if (!(typeof fontFamilyOrFontMap === 'object')) {
+            _context5.next = 10;
+            break;
+          }
+
+          if (!options) {
+            _context5.next = 5;
+            break;
+          }
+
+          throw new _expoModulesCore.CodedError("ERR_FONT_API", "No fontFamily can be used for the provided options: " + options + ". The second argument of `unloadAsync()` can only be used with a `string` value as the first argument.");
+
+        case 5:
+          fontMap = fontFamilyOrFontMap;
+          names = Object.keys(fontMap);
+          _context5.next = 9;
+          return _regeneratorRuntime().awrap(Promise.all(names.map(function (name) {
+            return unloadFontInNamespaceAsync(name, fontMap[name]);
+          })));
+
+        case 9:
+          return _context5.abrupt("return");
+
+        case 10:
+          _context5.next = 12;
+          return _regeneratorRuntime().awrap(unloadFontInNamespaceAsync(fontFamilyOrFontMap, options));
+
+        case 12:
+          return _context5.abrupt("return", _context5.sent);
+
+        case 13:
+        case "end":
+          return _context5.stop();
+      }
+    }
+  }, null, null, null, Promise);
+}
+
+function unloadFontInNamespaceAsync(fontFamily, options) {
+  var nativeFontName;
+  return _regeneratorRuntime().async(function unloadFontInNamespaceAsync$(_context6) {
+    while (1) {
+      switch (_context6.prev = _context6.next) {
+        case 0:
+          if (loaded[fontFamily]) {
+            _context6.next = 4;
+            break;
+          }
+
+          return _context6.abrupt("return");
+
+        case 4:
+          delete loaded[fontFamily];
+
+        case 5:
+          nativeFontName = (0, _FontLoader.getNativeFontName)(fontFamily);
+
+          if (nativeFontName) {
+            _context6.next = 8;
+            break;
+          }
+
+          throw new _expoModulesCore.CodedError("ERR_FONT_FAMILY", "Cannot unload an empty name");
+
+        case 8:
+          _context6.next = 10;
+          return _regeneratorRuntime().awrap(_ExpoFontLoader.default.unloadAsync(nativeFontName, options));
+
+        case 10:
+        case "end":
+          return _context6.stop();
+      }
+    }
+  }, null, null, null, Promise);
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,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O1VBY0dqQixPQWRILEdBY2FILG1CQWRiO1VBZUdJLEtBZkgsR0FlV0MsTUFBTSxDQUFDQyxJQUFQLENBQVlILE9BQVosQ0FmWDtVQUFBO1VBQUEsbUNBZ0JHSSxPQUFPLENBQUNDLEdBQVIsQ0FBWUosS0FBSyxDQUFDSyxHQUFOLENBQVUsVUFBQ0MsSUFBRDtZQUFBLE9BQVVXLDBCQUEwQixDQUFDWCxJQUFELEVBQU9QLE9BQU8sQ0FBQ08sSUFBRCxDQUFkLENBQXBDO1VBQUEsQ0FBVixDQUFaLENBaEJIOztRQUFBO1VBQUE7O1FBQUE7VUFBQTtVQUFBLG1DQW9CUVcsMEJBQTBCLENBQUNyQixtQkFBRCxFQUFzQm9CLE9BQXRCLENBcEJsQzs7UUFBQTtVQUFBOztRQUFBO1FBQUE7VUFBQTtNQUFBO0lBQUE7RUFBQTtBQUFBOztBQXVCUCxTQUFlQywwQkFBZixDQUNFNUIsVUFERixFQUVFMkIsT0FGRjtFQUFBO0VBQUE7SUFBQTtNQUFBO1FBQUE7VUFBQSxJQUlPOUIsTUFBTSxDQUFDRyxVQUFELENBSmI7WUFBQTtZQUFBO1VBQUE7O1VBQUE7O1FBQUE7VUFPSSxPQUFPSCxNQUFNLENBQUNHLFVBQUQsQ0FBYjs7UUFQSjtVQWVRNkIsY0FmUixHQWV5QixtQ0FBa0I3QixVQUFsQixDQWZ6Qjs7VUFBQSxJQWlCTzZCLGNBakJQO1lBQUE7WUFBQTtVQUFBOztVQUFBLE1Ba0JVLElBQUlwQiwyQkFBSixrREFsQlY7O1FBQUE7VUFBQTtVQUFBLG1DQXFCUWEsd0JBQWVJLFdBQWYsQ0FBMkJHLGNBQTNCLEVBQTJDRixPQUEzQyxDQXJCUjs7UUFBQTtRQUFBO1VBQUE7TUFBQTtJQUFBO0VBQUE7QUFBQSIsIm5hbWVzIjpbImxvYWRlZCIsImxvYWRQcm9taXNlcyIsInByb2Nlc3NGb250RmFtaWx5IiwiZm9udEZhbWlseSIsImlzTG9hZGVkIiwiX19ERVZfXyIsImlzTG9hZGluZyIsImNvbnNvbGUiLCJlcnJvciIsImxvYWRBc3luYyIsImZvbnRGYW1pbHlPckZvbnRNYXAiLCJzb3VyY2UiLCJDb2RlZEVycm9yIiwiZm9udE1hcCIsIm5hbWVzIiwiT2JqZWN0Iiwia2V5cyIsIlByb21pc2UiLCJhbGwiLCJtYXAiLCJuYW1lIiwibG9hZEZvbnRJbk5hbWVzcGFjZUFzeW5jIiwiaGFzT3duUHJvcGVydHkiLCJhc3NldCIsInVubG9hZEFsbEFzeW5jIiwiRXhwb0ZvbnRMb2FkZXIiLCJVbmF2YWlsYWJpbGl0eUVycm9yIiwibGVuZ3RoIiwiam9pbiIsInVubG9hZEFzeW5jIiwib3B0aW9ucyIsInVubG9hZEZvbnRJbk5hbWVzcGFjZUFzeW5jIiwibmF0aXZlRm9udE5hbWUiXSwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vc3JjL0ZvbnQudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29kZWRFcnJvciwgVW5hdmFpbGFiaWxpdHlFcnJvciB9IGZyb20gJ2V4cG8tbW9kdWxlcy1jb3JlJztcblxuaW1wb3J0IEV4cG9Gb250TG9hZGVyIGZyb20gJy4vRXhwb0ZvbnRMb2FkZXInO1xuaW1wb3J0IHsgRm9udERpc3BsYXksIEZvbnRTb3VyY2UsIEZvbnRSZXNvdXJjZSwgVW5sb2FkRm9udE9wdGlvbnMgfSBmcm9tICcuL0ZvbnQudHlwZXMnO1xuaW1wb3J0IHtcbiAgZ2V0QXNzZXRGb3JTb3VyY2UsXG4gIGxvYWRTaW5nbGVGb250QXN5bmMsXG4gIGZvbnRGYW1pbHlOZWVkc1Njb3BpbmcsXG4gIGdldE5hdGl2ZUZvbnROYW1lLFxufSBmcm9tICcuL0ZvbnRMb2FkZXInO1xuXG5jb25zdCBsb2FkZWQ6IHsgW25hbWU6IHN0cmluZ106IGJvb2xlYW4gfSA9IHt9O1xuY29uc3QgbG9hZFByb21pc2VzOiB7IFtuYW1lOiBzdHJpbmddOiBQcm9taXNlPHZvaWQ+IH0gPSB7fTtcblxuLy8gQG5lZWRzQXVkaXRcbi8vIG5vdGUoYnJlbnR2YXRuZSk6IGF0IHNvbWUgcG9pbnQgd2UgbWF5IHdhbnQgdG8gd2FybiBpZiB0aGlzIGlzIGNhbGxlZCBvdXRzaWRlIG9mIGEgbWFuYWdlZCBhcHAuXG4vKipcbiAqIFVzZWQgdG8gdHJhbnNmb3JtIGZvbnQgZmFtaWx5IG5hbWVzIHRvIHRoZSBzY29wZWQgbmFtZS4gVGhpcyBkb2VzIG5vdCBuZWVkIHRvXG4gKiBiZSBjYWxsZWQgaW4gc3RhbmRhbG9uZSBvciBiYXJlIGFwcHMgYnV0IGl0IHdpbGwgcmV0dXJuIHVuc2NvcGVkIGZvbnQgZmFtaWx5XG4gKiBuYW1lcyBpZiBpdCBpcyBjYWxsZWQgaW4gdGhvc2UgY29udGV4dHMuXG4gKlxuICogQHBhcmFtIGZvbnRGYW1pbHkgTmFtZSBvZiBmb250IHRvIHByb2Nlc3MuXG4gKiBAcmV0dXJucyBSZXR1cm5zIGEgbmFtZSBwcm9jZXNzZWQgZm9yIHVzZSB3aXRoIHRoZSBbY3VycmVudCB3b3JrZmxvd10oaHR0cHM6Ly9kb2NzLmV4cG8uZGV2L2ludHJvZHVjdGlvbi9tYW5hZ2VkLXZzLWJhcmUvKS5cbiAqL1xuZXhwb3J0IGZ1bmN0aW9uIHByb2Nlc3NGb250RmFtaWx5KGZvbnRGYW1pbHk6IHN0cmluZyB8IG51bGwpOiBzdHJpbmcgfCBudWxsIHtcbiAgaWYgKCFmb250RmFtaWx5IHx8ICFmb250RmFtaWx5TmVlZHNTY29waW5nKGZvbnRGYW1pbHkpKSB7XG4gICAgcmV0dXJuIGZvbnRGYW1pbHk7XG4gIH1cblxuICBpZiAoIWlzTG9hZGVkKGZvbnRGYW1pbHkpKSB7XG4gICAgaWYgKF9fREVWX18pIHtcbiAgICAgIGlmIChpc0xvYWRpbmcoZm9udEZhbWlseSkpIHtcbiAgICAgICAgY29uc29sZS5lcnJvcihcbiAgICAgICAgICBgWW91IHN0YXJ0ZWQgbG9hZGluZyB0aGUgZm9udCBcIiR7Zm9udEZhbWlseX1cIiwgYnV0IHVzZWQgaXQgYmVmb3JlIGl0IGZpbmlzaGVkIGxvYWRpbmcuIFlvdSBuZWVkIHRvIHdhaXQgZm9yIEZvbnQubG9hZEFzeW5jIHRvIGNvbXBsZXRlIGJlZm9yZSB1c2luZyB0aGUgZm9udC5gXG4gICAgICAgICk7XG4gICAgICB9IGVsc2Uge1xuICAgICAgICBjb25zb2xlLmVycm9yKFxuICAgICAgICAgIGBmb250RmFtaWx5IFwiJHtmb250RmFtaWx5fVwiIGlzIG5vdCBhIHN5c3RlbSBmb250IGFuZCBoYXMgbm90IGJlZW4gbG9hZGVkIHRocm91Z2ggRm9udC5sb2FkQXN5bmMuXFxuXG4tIElmIHlvdSBpbnRlbmRlZCB0byB1c2UgYSBzeXN0ZW0gZm9udCwgbWFrZSBzdXJlIHlvdSB0eXBlZCB0aGUgbmFtZSBjb3JyZWN0bHkgYW5kIHRoYXQgaXQgaXMgc3VwcG9ydGVkIGJ5IHlvdXIgZGV2aWNlIG9wZXJhdGluZyBzeXN0ZW0uXFxuXG4tIElmIHRoaXMgaXMgYSBjdXN0b20gZm9udCwgYmUgc3VyZSB0byBsb2FkIGl0IHdpdGggRm9udC5sb2FkQXN5bmMuYFxuICAgICAgICApO1xuICAgICAgfVxuICAgIH1cblxuICAgIHJldHVybiAnU3lzdGVtJztcbiAgfVxuXG4gIHJldHVybiBgRXhwb0ZvbnQtJHtnZXROYXRpdmVGb250TmFtZShmb250RmFtaWx5KX1gO1xufVxuXG4vLyBAbmVlZHNBdWRpdFxuLyoqXG4gKiBTeW5jaHJvbm91c2x5IGRldGVjdCBpZiB0aGUgZm9udCBmb3IgYGZvbnRGYW1pbHlgIGhhcyBmaW5pc2hlZCBsb2FkaW5nLlxuICpcbiAqIEBwYXJhbSBmb250RmFtaWx5IFRoZSBuYW1lIHVzZWQgdG8gbG9hZCB0aGUgYEZvbnRSZXNvdXJjZWAuXG4gKiBAcmV0dXJuIFJldHVybnMgYHRydWVgIGlmIHRoZSBmb250IGhhcyBmdWxseSBsb2FkZWQuXG4gKi9cbmV4cG9ydCBmdW5jdGlvbiBpc0xvYWRlZChmb250RmFtaWx5OiBzdHJpbmcpOiBib29sZWFuIHtcbiAgcmV0dXJuIGZvbnRGYW1pbHkgaW4gbG9hZGVkO1xufVxuXG4vLyBAbmVlZHNBdWRpdFxuLyoqXG4gKiBTeW5jaHJvbm91c2x5IGRldGVjdCBpZiB0aGUgZm9udCBmb3IgYGZvbnRGYW1pbHlgIGlzIHN0aWxsIGJlaW5nIGxvYWRlZC5cbiAqXG4gKiBAcGFyYW0gZm9udEZhbWlseSBUaGUgbmFtZSB1c2VkIHRvIGxvYWQgdGhlIGBGb250UmVzb3VyY2VgLlxuICogQHJldHVybnMgUmV0dXJucyBgdHJ1ZWAgaWYgdGhlIGZvbnQgaXMgc3RpbGwgbG9hZGluZy5cbiAqL1xuZXhwb3J0IGZ1bmN0aW9uIGlzTG9hZGluZyhmb250RmFtaWx5OiBzdHJpbmcpOiBib29sZWFuIHtcbiAgcmV0dXJuIGZvbnRGYW1pbHkgaW4gbG9hZFByb21pc2VzO1xufVxuXG4vLyBAbmVlZHNBdWRpdFxuLyoqXG4gKiBIaWdobHkgZWZmaWNpZW50IG1ldGhvZCBmb3IgbG9hZGluZyBmb250cyBmcm9tIHN0YXRpYyBvciByZW1vdGUgcmVzb3VyY2VzIHdoaWNoIGNhbiB0aGVuIGJlIHVzZWRcbiAqIHdpdGggdGhlIHBsYXRmb3JtJ3MgbmF0aXZlIHRleHQgZWxlbWVudHMuIEluIHRoZSBicm93c2VyIHRoaXMgZ2VuZXJhdGVzIGEgYEBmb250LWZhY2VgIGJsb2NrIGluXG4gKiBhIHNoYXJlZCBzdHlsZSBzaGVldCBmb3IgZm9udHMuIE5vIENTUyBpcyBuZWVkZWQgdG8gdXNlIHRoaXMgbWV0aG9kLlxuICpcbiAqIEBwYXJhbSBmb250RmFtaWx5T3JGb250TWFwIHN0cmluZyBvciBtYXAgb2YgdmFsdWVzIHRoYXQgY2FuIGJlIHVzZWQgYXMgdGhlIFtgZm9udEZhbWlseWBdKGh0dHBzOi8vcmVhY3RuYXRpdmUuZGV2L2RvY3MvdGV4dCNzdHlsZSlcbiAqIHN0eWxlIHByb3Agd2l0aCBSZWFjdCBOYXRpdmUgVGV4dCBlbGVtZW50cy5cbiAqIEBwYXJhbSBzb3VyY2UgdGhlIGZvbnQgYXNzZXQgdGhhdCBzaG91bGQgYmUgbG9hZGVkIGludG8gdGhlIGBmb250RmFtaWx5YCBuYW1lc3BhY2UuXG4gKlxuICogQHJldHVybiBSZXR1cm5zIGEgcHJvbWlzZSB0aGF0IGZ1bGZpbHMgd2hlbiB0aGUgZm9udCBoYXMgbG9hZGVkLiBPZnRlbiB5b3UgbWF5IHdhbnQgdG8gd3JhcCB0aGVcbiAqIG1ldGhvZCBpbiBhIGB0cnkvY2F0Y2gvZmluYWxseWAgdG8gZW5zdXJlIHRoZSBhcHAgY29udGludWVzIGlmIHRoZSBmb250IGZhaWxzIHRvIGxvYWQuXG4gKi9cbmV4cG9ydCBhc3luYyBmdW5jdGlvbiBsb2FkQXN5bmMoXG4gIGZvbnRGYW1pbHlPckZvbnRNYXA6IHN0cmluZyB8IFJlY29yZDxzdHJpbmcsIEZvbnRTb3VyY2U+LFxuICBzb3VyY2U/OiBGb250U291cmNlXG4pOiBQcm9taXNlPHZvaWQ+IHtcbiAgaWYgKHR5cGVvZiBmb250RmFtaWx5T3JGb250TWFwID09PSAnb2JqZWN0Jykge1xuICAgIGlmIChzb3VyY2UpIHtcbiAgICAgIHRocm93IG5ldyBDb2RlZEVycm9yKFxuICAgICAgICBgRVJSX0ZPTlRfQVBJYCxcbiAgICAgICAgYE5vIGZvbnRGYW1pbHkgY2FuIGJlIHVzZWQgZm9yIHRoZSBwcm92aWRlZCBzb3VyY2U6ICR7c291cmNlfS4gVGhlIHNlY29uZCBhcmd1bWVudCBvZiBcXGBsb2FkQXN5bmMoKVxcYCBjYW4gb25seSBiZSB1c2VkIHdpdGggYSBcXGBzdHJpbmdcXGAgdmFsdWUgYXMgdGhlIGZpcnN0IGFyZ3VtZW50LmBcbiAgICAgICk7XG4gICAgfVxuICAgIGNvbnN0IGZvbnRNYXAgPSBmb250RmFtaWx5T3JGb250TWFwO1xuICAgIGNvbnN0IG5hbWVzID0gT2JqZWN0LmtleXMoZm9udE1hcCk7XG4gICAgYXdhaXQgUHJvbWlzZS5hbGwobmFtZXMubWFwKChuYW1lKSA9PiBsb2FkRm9udEluTmFtZXNwYWNlQXN5bmMobmFtZSwgZm9udE1hcFtuYW1lXSkpKTtcbiAgICByZXR1cm47XG4gIH1cblxuICByZXR1cm4gYXdhaXQgbG9hZEZvbnRJbk5hbWVzcGFjZUFzeW5jKGZvbnRGYW1pbHlPckZvbnRNYXAsIHNvdXJjZSk7XG59XG5cbmFzeW5jIGZ1bmN0aW9uIGxvYWRGb250SW5OYW1lc3BhY2VBc3luYyhcbiAgZm9udEZhbWlseTogc3RyaW5nLFxuICBzb3VyY2U/OiBGb250U291cmNlIHwgbnVsbFxuKTogUHJvbWlzZTx2b2lkPiB7XG4gIGlmICghc291cmNlKSB7XG4gICAgdGhyb3cgbmV3IENvZGVkRXJyb3IoXG4gICAgICBgRVJSX0ZPTlRfU09VUkNFYCxcbiAgICAgIGBDYW5ub3QgbG9hZCBudWxsIG9yIHVuZGVmaW5lZCBmb250IHNvdXJjZTogeyBcIiR7Zm9udEZhbWlseX1cIjogJHtzb3VyY2V9IH0uIEV4cGVjdGVkIGFzc2V0IG9mIHR5cGUgXFxgRm9udFNvdXJjZVxcYCBmb3IgZm9udEZhbWlseSBvZiBuYW1lOiBcIiR7Zm9udEZhbWlseX1cImBcbiAgICApO1xuICB9XG5cbiAgaWYgKGxvYWRlZFtmb250RmFtaWx5XSkge1xuICAgIHJldHVybjtcbiAgfVxuXG4gIGlmIChsb2FkUHJvbWlzZXMuaGFzT3duUHJvcGVydHkoZm9udEZhbWlseSkpIHtcbiAgICByZXR1cm4gbG9hZFByb21pc2VzW2ZvbnRGYW1pbHldO1xuICB9XG5cbiAgLy8gSW1wb3J0YW50OiB3ZSB3YW50IGFsbCBjYWxsZXJzIHRoYXQgY29uY3VycmVudGx5IHRyeSB0byBsb2FkIHRoZSBzYW1lIGZvbnQgdG8gYXdhaXQgdGhlIHNhbWVcbiAgLy8gcHJvbWlzZS4gSWYgd2UncmUgaGVyZSwgd2UgaGF2ZW4ndCBjcmVhdGVkIHRoZSBwcm9taXNlIHlldC4gVG8gZW5zdXJlIHdlIGNyZWF0ZSBvbmx5IG9uZVxuICAvLyBwcm9taXNlIGluIHRoZSBwcm9ncmFtLCB3ZSBuZWVkIHRvIGNyZWF0ZSB0aGUgcHJvbWlzZSBzeW5jaHJvbm91c2x5IHdpdGhvdXQgeWllbGRpbmcgdGhlIGV2ZW50XG4gIC8vIGxvb3AgZnJvbSB0aGlzIHBvaW50LlxuXG4gIGNvbnN0IGFzc2V0ID0gZ2V0QXNzZXRGb3JTb3VyY2Uoc291cmNlKTtcbiAgbG9hZFByb21pc2VzW2ZvbnRGYW1pbHldID0gKGFzeW5jICgpID0+IHtcbiAgICB0cnkge1xuICAgICAgYXdhaXQgbG9hZFNpbmdsZUZvbnRBc3luYyhmb250RmFtaWx5LCBhc3NldCk7XG4gICAgICBsb2FkZWRbZm9udEZhbWlseV0gPSB0cnVlO1xuICAgIH0gZmluYWxseSB7XG4gICAgICBkZWxldGUgbG9hZFByb21pc2VzW2ZvbnRGYW1pbHldO1xuICAgIH1cbiAgfSkoKTtcblxuICBhd2FpdCBsb2FkUHJvbWlzZXNbZm9udEZhbWlseV07XG59XG5cbi8vIEBuZWVkc0F1ZGl0XG4vKipcbiAqIFVubG9hZHMgYWxsIHRoZSBjdXN0b20gZm9udHMuIFRoaXMgaXMgdXNlZCBmb3IgdGVzdGluZy5cbiAqL1xuZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIHVubG9hZEFsbEFzeW5jKCk6IFByb21pc2U8dm9pZD4ge1xuICBpZiAoIUV4cG9Gb250TG9hZGVyLnVubG9hZEFsbEFzeW5jKSB7XG4gICAgdGhyb3cgbmV3IFVuYXZhaWxhYmlsaXR5RXJyb3IoJ2V4cG8tZm9udCcsICd1bmxvYWRBbGxBc3luYycpO1xuICB9XG5cbiAgaWYgKE9iamVjdC5rZXlzKGxvYWRQcm9taXNlcykubGVuZ3RoKSB7XG4gICAgdGhyb3cgbmV3IENvZGVkRXJyb3IoXG4gICAgICBgRVJSX1VOTE9BRGAsXG4gICAgICBgQ2Fubm90IHVubG9hZCBmb250cyB3aGlsZSB0aGV5J3JlIHN0aWxsIGxvYWRpbmc6ICR7T2JqZWN0LmtleXMobG9hZFByb21pc2VzKS5qb2luKCcsICcpfWBcbiAgICApO1xuICB9XG5cbiAgZm9yIChjb25zdCBmb250RmFtaWx5IG9mIE9iamVjdC5rZXlzKGxvYWRlZCkpIHtcbiAgICBkZWxldGUgbG9hZGVkW2ZvbnRGYW1pbHldO1xuICB9XG5cbiAgYXdhaXQgRXhwb0ZvbnRMb2FkZXIudW5sb2FkQWxsQXN5bmMoKTtcbn1cblxuLy8gQG5lZWRzQXVkaXRcbi8qKlxuICogVW5sb2FkIGN1c3RvbSBmb250cyBtYXRjaGluZyB0aGUgYGZvbnRGYW1pbHlgcyBhbmQgZGlzcGxheSB2YWx1ZXMgcHJvdmlkZWQuXG4gKiBCZWNhdXNlIGZvbnRzIGFyZSBhdXRvbWF0aWNhbGx5IHVubG9hZGVkIG9uIGV2ZXJ5IHBsYXRmb3JtIHRoaXMgaXMgbW9zdGx5IHVzZWQgZm9yIHRlc3RpbmcuXG4gKlxuICogQHBhcmFtIGZvbnRGYW1pbHlPckZvbnRNYXAgVGhlIG5hbWUgb3IgbmFtZXMgb2YgdGhlIGN1c3RvbSBmb250cyB0aGF0IHdpbGwgYmUgdW5sb2FkZWQuXG4gKiBAcGFyYW0gb3B0aW9ucyBXaGVuIGBmb250RmFtaWx5T3JGb250TWFwYCBpcyBhIHN0cmluZywgdGhpcyBzaG91bGQgYmUgdGhlIGZvbnQgc291cmNlIHVzZWQgdG8gbG9hZFxuICogdGhlIGN1c3RvbSBmb250IG9yaWdpbmFsbHkuXG4gKi9cbmV4cG9ydCBhc3luYyBmdW5jdGlvbiB1bmxvYWRBc3luYyhcbiAgZm9udEZhbWlseU9yRm9udE1hcDogc3RyaW5nIHwgUmVjb3JkPHN0cmluZywgVW5sb2FkRm9udE9wdGlvbnM+LFxuICBvcHRpb25zPzogVW5sb2FkRm9udE9wdGlvbnNcbik6IFByb21pc2U8dm9pZD4ge1xuICBpZiAoIUV4cG9Gb250TG9hZGVyLnVubG9hZEFzeW5jKSB7XG4gICAgdGhyb3cgbmV3IFVuYXZhaWxhYmlsaXR5RXJyb3IoJ2V4cG8tZm9udCcsICd1bmxvYWRBc3luYycpO1xuICB9XG4gIGlmICh0eXBlb2YgZm9udEZhbWlseU9yRm9udE1hcCA9PT0gJ29iamVjdCcpIHtcbiAgICBpZiAob3B0aW9ucykge1xuICAgICAgdGhyb3cgbmV3IENvZGVkRXJyb3IoXG4gICAgICAgIGBFUlJfRk9OVF9BUElgLFxuICAgICAgICBgTm8gZm9udEZhbWlseSBjYW4gYmUgdXNlZCBmb3IgdGhlIHByb3ZpZGVkIG9wdGlvbnM6ICR7b3B0aW9uc30uIFRoZSBzZWNvbmQgYXJndW1lbnQgb2YgXFxgdW5sb2FkQXN5bmMoKVxcYCBjYW4gb25seSBiZSB1c2VkIHdpdGggYSBcXGBzdHJpbmdcXGAgdmFsdWUgYXMgdGhlIGZpcnN0IGFyZ3VtZW50LmBcbiAgICAgICk7XG4gICAgfVxuICAgIGNvbnN0IGZvbnRNYXAgPSBmb250RmFtaWx5T3JGb250TWFwO1xuICAgIGNvbnN0IG5hbWVzID0gT2JqZWN0LmtleXMoZm9udE1hcCk7XG4gICAgYXdhaXQgUHJvbWlzZS5hbGwobmFtZXMubWFwKChuYW1lKSA9PiB1bmxvYWRGb250SW5OYW1lc3BhY2VBc3luYyhuYW1lLCBmb250TWFwW25hbWVdKSkpO1xuICAgIHJldHVybjtcbiAgfVxuXG4gIHJldHVybiBhd2FpdCB1bmxvYWRGb250SW5OYW1lc3BhY2VBc3luYyhmb250RmFtaWx5T3JGb250TWFwLCBvcHRpb25zKTtcbn1cblxuYXN5bmMgZnVuY3Rpb24gdW5sb2FkRm9udEluTmFtZXNwYWNlQXN5bmMoXG4gIGZvbnRGYW1pbHk6IHN0cmluZyxcbiAgb3B0aW9ucz86IFVubG9hZEZvbnRPcHRpb25zIHwgbnVsbFxuKTogUHJvbWlzZTx2b2lkPiB7XG4gIGlmICghbG9hZGVkW2ZvbnRGYW1pbHldKSB7XG4gICAgcmV0dXJuO1xuICB9IGVsc2Uge1xuICAgIGRlbGV0ZSBsb2FkZWRbZm9udEZhbWlseV07XG4gIH1cblxuICAvLyBJbXBvcnRhbnQ6IHdlIHdhbnQgYWxsIGNhbGxlcnMgdGhhdCBjb25jdXJyZW50bHkgdHJ5IHRvIGxvYWQgdGhlIHNhbWUgZm9udCB0byBhd2FpdCB0aGUgc2FtZVxuICAvLyBwcm9taXNlLiBJZiB3ZSdyZSBoZXJlLCB3ZSBoYXZlbid0IGNyZWF0ZWQgdGhlIHByb21pc2UgeWV0LiBUbyBlbnN1cmUgd2UgY3JlYXRlIG9ubHkgb25lXG4gIC8vIHByb21pc2UgaW4gdGhlIHByb2dyYW0sIHdlIG5lZWQgdG8gY3JlYXRlIHRoZSBwcm9taXNlIHN5bmNocm9ub3VzbHkgd2l0aG91dCB5aWVsZGluZyB0aGUgZXZlbnRcbiAgLy8gbG9vcCBmcm9tIHRoaXMgcG9pbnQuXG5cbiAgY29uc3QgbmF0aXZlRm9udE5hbWUgPSBnZXROYXRpdmVGb250TmFtZShmb250RmFtaWx5KTtcblxuICBpZiAoIW5hdGl2ZUZvbnROYW1lKSB7XG4gICAgdGhyb3cgbmV3IENvZGVkRXJyb3IoYEVSUl9GT05UX0ZBTUlMWWAsIGBDYW5ub3QgdW5sb2FkIGFuIGVtcHR5IG5hbWVgKTtcbiAgfVxuXG4gIGF3YWl0IEV4cG9Gb250TG9hZGVyLnVubG9hZEFzeW5jKG5hdGl2ZUZvbnROYW1lLCBvcHRpb25zKTtcbn1cblxuZXhwb3J0IHsgRm9udERpc3BsYXksIEZvbnRTb3VyY2UsIEZvbnRSZXNvdXJjZSwgVW5sb2FkRm9udE9wdGlvbnMgfTtcbiJdfQ==

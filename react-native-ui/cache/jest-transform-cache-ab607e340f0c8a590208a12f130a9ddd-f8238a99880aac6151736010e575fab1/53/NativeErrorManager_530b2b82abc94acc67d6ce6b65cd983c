@@ -1,0 +1,13 @@
+547a465d879cd68221ab9ef1b3f3d58d
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _NativeModulesProxy = _interopRequireDefault(require("../NativeModulesProxy"));
+
+var _default = _NativeModulesProxy.default.ExpoModulesCoreErrorManager;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBOztlQUNlQSw0QkFBbUJDLDJCIiwibmFtZXMiOlsiTmF0aXZlTW9kdWxlc1Byb3h5IiwiRXhwb01vZHVsZXNDb3JlRXJyb3JNYW5hZ2VyIl0sInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9zd2VldC9OYXRpdmVFcnJvck1hbmFnZXIudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IE5hdGl2ZU1vZHVsZXNQcm94eSBmcm9tICcuLi9OYXRpdmVNb2R1bGVzUHJveHknO1xuZXhwb3J0IGRlZmF1bHQgTmF0aXZlTW9kdWxlc1Byb3h5LkV4cG9Nb2R1bGVzQ29yZUVycm9yTWFuYWdlcjtcbiJdfQ==

@@ -1,0 +1,1 @@
+{"version":3,"mappings":";;;;;AAAA;;eACeA,oCAAmBC,iB","names":["NativeModulesProxy","ExponentConstants"],"sourceRoot":"","sources":["../src/ExponentConstants.ts"],"sourcesContent":["import { NativeModulesProxy } from 'expo-modules-core';\nexport default NativeModulesProxy.ExponentConstants;\n"]}

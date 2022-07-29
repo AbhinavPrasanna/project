@@ -1,0 +1,41 @@
+2dbb3ba5252e17b769f4e65821cc433b
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.UnavailabilityError = void 0;
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+var _Platform = _interopRequireDefault(require("../Platform"));
+
+var _CodedError2 = require("./CodedError");
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+var UnavailabilityError = function (_CodedError) {
+  (0, _inherits2.default)(UnavailabilityError, _CodedError);
+
+  var _super = _createSuper(UnavailabilityError);
+
+  function UnavailabilityError(moduleName, propertyName) {
+    (0, _classCallCheck2.default)(this, UnavailabilityError);
+    return _super.call(this, 'ERR_UNAVAILABLE', "The method or property " + moduleName + "." + propertyName + " is not available on " + _Platform.default.OS + ", are you sure you've linked all the native dependencies properly?");
+  }
+
+  return (0, _createClass2.default)(UnavailabilityError);
+}(_CodedError2.CodedError);
+
+exports.UnavailabilityError = UnavailabilityError;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTs7QUFDQTs7Ozs7O0lBT2FBLG1COzs7OztFQUNYLDZCQUFZQyxVQUFaLEVBQWdDQyxZQUFoQyxFQUFvRDtJQUFBO0lBQUEseUJBRWhELGlCQUZnRCw4QkFHdEJELFVBSHNCLFNBR1JDLFlBSFEsNkJBRzRCQyxrQkFBU0MsRUFIckM7RUFLbkQ7OztFQU5zQ0MsdUIiLCJuYW1lcyI6WyJVbmF2YWlsYWJpbGl0eUVycm9yIiwibW9kdWxlTmFtZSIsInByb3BlcnR5TmFtZSIsIlBsYXRmb3JtIiwiT1MiLCJDb2RlZEVycm9yIl0sInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9lcnJvcnMvVW5hdmFpbGFiaWxpdHlFcnJvci50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUGxhdGZvcm0gZnJvbSAnLi4vUGxhdGZvcm0nO1xuaW1wb3J0IHsgQ29kZWRFcnJvciB9IGZyb20gJy4vQ29kZWRFcnJvcic7XG5cbi8qKlxuICogQSBjbGFzcyBmb3IgZXJyb3JzIHRvIGJlIHRocm93biB3aGVuIGEgcHJvcGVydHkgaXMgYWNjZXNzZWQgd2hpY2ggaXNcbiAqIHVuYXZhaWxhYmxlLCB1bnN1cHBvcnRlZCwgb3Igbm90IGN1cnJlbnRseSBpbXBsZW1lbnRlZCBvbiB0aGUgcnVubmluZ1xuICogcGxhdGZvcm0uXG4gKi9cbmV4cG9ydCBjbGFzcyBVbmF2YWlsYWJpbGl0eUVycm9yIGV4dGVuZHMgQ29kZWRFcnJvciB7XG4gIGNvbnN0cnVjdG9yKG1vZHVsZU5hbWU6IHN0cmluZywgcHJvcGVydHlOYW1lOiBzdHJpbmcpIHtcbiAgICBzdXBlcihcbiAgICAgICdFUlJfVU5BVkFJTEFCTEUnLFxuICAgICAgYFRoZSBtZXRob2Qgb3IgcHJvcGVydHkgJHttb2R1bGVOYW1lfS4ke3Byb3BlcnR5TmFtZX0gaXMgbm90IGF2YWlsYWJsZSBvbiAke1BsYXRmb3JtLk9TfSwgYXJlIHlvdSBzdXJlIHlvdSd2ZSBsaW5rZWQgYWxsIHRoZSBuYXRpdmUgZGVwZW5kZW5jaWVzIHByb3Blcmx5P2BcbiAgICApO1xuICB9XG59XG4iXX0=

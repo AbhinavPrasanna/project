@@ -1,0 +1,18 @@
+35d33c2918cbfead3a7bdc82704654bc
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _createIconSet = _interopRequireDefault(require("./createIconSet"));
+
+var _Fontisto = _interopRequireDefault(require("./vendor/react-native-vector-icons/Fonts/Fontisto.ttf"));
+
+var _Fontisto2 = _interopRequireDefault(require("./vendor/react-native-vector-icons/glyphmaps/Fontisto.json"));
+
+var iconSet = (0, _createIconSet.default)(_Fontisto2.default, "Fontisto", _Fontisto.default);
+var _default = iconSet;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUtBOztBQUNBOztBQUNBOztBQUVBLElBQU1BLE9BQU8sR0FBRyw0QkFBY0Msa0JBQWQsRUFBd0IsVUFBeEIsRUFBb0NDLGlCQUFwQyxDQUFoQjtlQUVlRixPIiwibmFtZXMiOlsiaWNvblNldCIsImdseXBoTWFwIiwiZm9udCJdLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvRm9udGlzdG8udHMiXSwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBGZWF0aGVyIGljb24gc2V0IGNvbXBvbmVudC5cbiAqIFVzYWdlOiA8RmVhdGhlciBuYW1lPVwiaWNvbi1uYW1lXCIgc2l6ZT17MjB9IGNvbG9yPVwiIzRGOEVGN1wiIC8+XG4gKi9cblxuaW1wb3J0IGNyZWF0ZUljb25TZXQgZnJvbSBcIi4vY3JlYXRlSWNvblNldFwiO1xuaW1wb3J0IGZvbnQgZnJvbSBcIi4vdmVuZG9yL3JlYWN0LW5hdGl2ZS12ZWN0b3ItaWNvbnMvRm9udHMvRm9udGlzdG8udHRmXCI7XG5pbXBvcnQgZ2x5cGhNYXAgZnJvbSBcIi4vdmVuZG9yL3JlYWN0LW5hdGl2ZS12ZWN0b3ItaWNvbnMvZ2x5cGhtYXBzL0ZvbnRpc3RvLmpzb25cIjtcblxuY29uc3QgaWNvblNldCA9IGNyZWF0ZUljb25TZXQoZ2x5cGhNYXAsIFwiRm9udGlzdG9cIiwgZm9udCk7XG5cbmV4cG9ydCBkZWZhdWx0IGljb25TZXQ7XG4iXX0=

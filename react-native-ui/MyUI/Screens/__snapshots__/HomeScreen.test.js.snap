@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeScreen component should render multiple items 1`] = `
+Array [
+  Object {
+    "brand": "Bratz",
+    "product_id": "1",
+    "product_name": "SUNGLAZZEZ",
+    "product_price": "80",
+  },
+  Object {
+    "brand": "Gucci",
+    "product_id": "2",
+    "product_name": "Aviators",
+    "product_price": "300",
+  },
+  Object {
+    "brand": "Bratz",
+    "product_id": "1",
+    "product_name": "SUNGLAZZEZ",
+    "product_price": "80",
+  },
+  Object {
+    "brand": "Oakley",
+    "product_id": "3",
+    "product_name": "Heart Glasses",
+    "product_price": "120",
+  },
+]
+`;
+
+exports[`HomeScreen component should render multiple items but fail when only expecting one item 1`] = `
+Object {
+  "brand": "Oakley",
+  "product_id": "3",
+  "product_name": "Heart Glasses",
+  "product_price": "120",
+}
+`;
+
+exports[`HomeScreen component should render multiple items but fail when only expecting one item 2`] = `
+Array [
+  Object {
+    "brand": "Gucci",
+    "product_id": "2",
+    "product_name": "Aviators",
+    "product_price": "300",
+  },
+  Object {
+    "brand": "Oakley",
+    "product_id": "3",
+    "product_name": "Heart Glasses",
+    "product_price": "120",
+  },
+  Object {
+    "brand": "Bratz",
+    "product_id": "1",
+    "product_name": "SUNGLAZZEZ",
+    "product_price": "80",
+  },
+]
+`;
+
+exports[`HomeScreen component should render the product information right when api responds but expect item to be wrong 1`] = `
+Object {
+  "brand": "Bratz",
+  "product_id": "1",
+  "product_name": "SUNGLAZZEZ",
+  "product_price": "80",
+}
+`;
+
+exports[`HomeScreen component should render the product information when api responds 1`] = `
+Object {
+  "brand": "Bratz",
+  "product_id": "1",
+  "product_name": "SUNGLAZZEZ",
+  "product_price": "80",
+}
+`;
+
+exports[`HomeScreen component tests that should fail should render multiple items but fail when only expecting multiple items that are different 1`] = `
+Array [
+  Object {
+    "brand": "Gucci",
+    "product_id": "2",
+    "product_name": "Aviators",
+    "product_price": "300",
+  },
+  Object {
+    "brand": "Oakley",
+    "product_id": "3",
+    "product_name": "Heart Glasses",
+    "product_price": "120",
+  },
+  Object {
+    "brand": "Bratz",
+    "product_id": "1",
+    "product_name": "SUNGLAZZEZ",
+    "product_price": "80",
+  },
+]
+`;
+
+exports[`HomeScreen component tests that should fail should render multiple items but fail when only expecting one item 1`] = `
+Object {
+  "brand": "Oakley",
+  "product_id": "3",
+  "product_name": "Heart Glasses",
+  "product_price": "120",
+}
+`;
+
+exports[`HomeScreen component tests that should fail should render the product information right when api responds but expect item to be wrong 1`] = `
+Object {
+  "brand": "Bratz",
+  "product_id": "1",
+  "product_name": "SUNGLAZZEZ",
+  "product_price": "80",
+}
+`;
+
+exports[`HomeScreen component tests that should pass should render multiple items 1`] = `
+Array [
+  Object {
+    "brand": "Bratz",
+    "product_id": "1",
+    "product_name": "SUNGLAZZEZ",
+    "product_price": "80",
+  },
+  Object {
+    "brand": "Gucci",
+    "product_id": "2",
+    "product_name": "Aviators",
+    "product_price": "300",
+  },
+  Object {
+    "brand": "Oakley",
+    "product_id": "3",
+    "product_name": "Heart Glasses",
+    "product_price": "120",
+  },
+]
+`;
+
+exports[`HomeScreen component tests that should pass should render multiple items wrong 1`] = `
+Object {
+  "brand": "Louis Vuitton",
+  "product_id": "5",
+  "product_name": "GLAZZEZ",
+  "product_price": "150",
+}
+`;
+
+exports[`HomeScreen component tests that should pass should render the product information when api responds 1`] = `
+Object {
+  "brand": "Bratz",
+  "product_id": "1",
+  "product_name": "SUNGLAZZEZ",
+  "product_price": "80",
+}
+`;

@@ -1,0 +1,1 @@
+{"version":3,"mappings":";;;;;;;AAAA;;eACeA,4BAAmBC,2B","names":["NativeModulesProxy","ExpoModulesCoreErrorManager"],"sourceRoot":"","sources":["../../src/sweet/NativeErrorManager.ts"],"sourcesContent":["import NativeModulesProxy from '../NativeModulesProxy';\nexport default NativeModulesProxy.ExpoModulesCoreErrorManager;\n"]}

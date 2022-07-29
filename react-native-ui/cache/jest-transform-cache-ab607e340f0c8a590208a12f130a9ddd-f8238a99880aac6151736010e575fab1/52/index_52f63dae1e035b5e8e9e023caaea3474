@@ -1,0 +1,138 @@
+f7aaf8b40c89b403a9d0d6254fd25a0f
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var _exportNames = {
+  RCTDeviceEventEmitter: true,
+  DeviceEventEmitter: true,
+  EventEmitter: true,
+  NativeModulesProxy: true,
+  requireNativeViewManager: true,
+  Platform: true,
+  SyntheticPlatformEmitter: true,
+  CodedError: true,
+  UnavailabilityError: true,
+  deprecate: true
+};
+Object.defineProperty(exports, "CodedError", {
+  enumerable: true,
+  get: function get() {
+    return _CodedError.CodedError;
+  }
+});
+Object.defineProperty(exports, "DeviceEventEmitter", {
+  enumerable: true,
+  get: function get() {
+    return _reactNative.DeviceEventEmitter;
+  }
+});
+Object.defineProperty(exports, "EventEmitter", {
+  enumerable: true,
+  get: function get() {
+    return _EventEmitter.EventEmitter;
+  }
+});
+Object.defineProperty(exports, "NativeModulesProxy", {
+  enumerable: true,
+  get: function get() {
+    return _NativeModulesProxy.default;
+  }
+});
+Object.defineProperty(exports, "Platform", {
+  enumerable: true,
+  get: function get() {
+    return _Platform.default;
+  }
+});
+exports.RCTDeviceEventEmitter = void 0;
+Object.defineProperty(exports, "SyntheticPlatformEmitter", {
+  enumerable: true,
+  get: function get() {
+    return _SyntheticPlatformEmitter.default;
+  }
+});
+Object.defineProperty(exports, "UnavailabilityError", {
+  enumerable: true,
+  get: function get() {
+    return _UnavailabilityError.UnavailabilityError;
+  }
+});
+Object.defineProperty(exports, "deprecate", {
+  enumerable: true,
+  get: function get() {
+    return _deprecate.default;
+  }
+});
+Object.defineProperty(exports, "requireNativeViewManager", {
+  enumerable: true,
+  get: function get() {
+    return _NativeViewManagerAdapter.requireNativeViewManager;
+  }
+});
+
+var _reactNative = require("react-native");
+
+var _EventEmitter = require("./EventEmitter");
+
+var _NativeModulesProxy = _interopRequireDefault(require("./NativeModulesProxy"));
+
+var _NativeViewManagerAdapter = require("./NativeViewManagerAdapter");
+
+var _Platform = _interopRequireDefault(require("./Platform"));
+
+var _SyntheticPlatformEmitter = _interopRequireDefault(require("./SyntheticPlatformEmitter"));
+
+var _CodedError = require("./errors/CodedError");
+
+var _UnavailabilityError = require("./errors/UnavailabilityError");
+
+require("./sweet/setUpErrorManager.fx");
+
+var _deprecate = _interopRequireDefault(require("./deprecate"));
+
+var _requireNativeModule = require("./requireNativeModule");
+
+Object.keys(_requireNativeModule).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  if (key in exports && exports[key] === _requireNativeModule[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _requireNativeModule[key];
+    }
+  });
+});
+
+var _PermissionsInterface = require("./PermissionsInterface");
+
+Object.keys(_PermissionsInterface).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  if (key in exports && exports[key] === _PermissionsInterface[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _PermissionsInterface[key];
+    }
+  });
+});
+
+var _PermissionsHook = require("./PermissionsHook");
+
+Object.keys(_PermissionsHook).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  if (key in exports && exports[key] === _PermissionsHook[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _PermissionsHook[key];
+    }
+  });
+});
+var RCTDeviceEventEmitter = _reactNative.DeviceEventEmitter;
+exports.RCTDeviceEventEmitter = RCTDeviceEventEmitter;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBOztBQUVBOztBQUNBOztBQUVBOztBQUNBOztBQUNBOztBQUNBOztBQUNBOztBQUVBOztBQUVBOztBQWdCQTs7QUFBQTtFQUFBO0VBQUE7RUFBQTtFQUFBO0lBQUE7SUFBQTtNQUFBO0lBQUE7RUFBQTtBQUFBOztBQU9BOztBQUFBO0VBQUE7RUFBQTtFQUFBO0VBQUE7SUFBQTtJQUFBO01BQUE7SUFBQTtFQUFBO0FBQUE7O0FBQ0E7O0FBQUE7RUFBQTtFQUFBO0VBQUE7RUFBQTtJQUFBO0lBQUE7TUFBQTtJQUFBO0VBQUE7QUFBQTtBQUhPLElBQU1BLHFCQUFxQixHQUFHQywrQkFBOUIiLCJuYW1lcyI6WyJSQ1REZXZpY2VFdmVudEVtaXR0ZXIiLCJEZXZpY2VFdmVudEVtaXR0ZXIiXSwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vc3JjL2luZGV4LnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IERldmljZUV2ZW50RW1pdHRlciB9IGZyb20gJ3JlYWN0LW5hdGl2ZSc7XG5cbmltcG9ydCB7IEV2ZW50RW1pdHRlciwgU3Vic2NyaXB0aW9uIH0gZnJvbSAnLi9FdmVudEVtaXR0ZXInO1xuaW1wb3J0IE5hdGl2ZU1vZHVsZXNQcm94eSBmcm9tICcuL05hdGl2ZU1vZHVsZXNQcm94eSc7XG5pbXBvcnQgeyBQcm94eU5hdGl2ZU1vZHVsZSB9IGZyb20gJy4vTmF0aXZlTW9kdWxlc1Byb3h5LnR5cGVzJztcbmltcG9ydCB7IHJlcXVpcmVOYXRpdmVWaWV3TWFuYWdlciB9IGZyb20gJy4vTmF0aXZlVmlld01hbmFnZXJBZGFwdGVyJztcbmltcG9ydCBQbGF0Zm9ybSBmcm9tICcuL1BsYXRmb3JtJztcbmltcG9ydCBTeW50aGV0aWNQbGF0Zm9ybUVtaXR0ZXIgZnJvbSAnLi9TeW50aGV0aWNQbGF0Zm9ybUVtaXR0ZXInO1xuaW1wb3J0IHsgQ29kZWRFcnJvciB9IGZyb20gJy4vZXJyb3JzL0NvZGVkRXJyb3InO1xuaW1wb3J0IHsgVW5hdmFpbGFiaWxpdHlFcnJvciB9IGZyb20gJy4vZXJyb3JzL1VuYXZhaWxhYmlsaXR5RXJyb3InO1xuXG5pbXBvcnQgJy4vc3dlZXQvc2V0VXBFcnJvck1hbmFnZXIuZngnO1xuXG5leHBvcnQgeyBkZWZhdWx0IGFzIGRlcHJlY2F0ZSB9IGZyb20gJy4vZGVwcmVjYXRlJztcblxuZXhwb3J0IHtcbiAgRGV2aWNlRXZlbnRFbWl0dGVyLFxuICBFdmVudEVtaXR0ZXIsXG4gIE5hdGl2ZU1vZHVsZXNQcm94eSxcbiAgUHJveHlOYXRpdmVNb2R1bGUsXG4gIFBsYXRmb3JtLFxuICBTdWJzY3JpcHRpb24sXG4gIFN5bnRoZXRpY1BsYXRmb3JtRW1pdHRlcixcbiAgcmVxdWlyZU5hdGl2ZVZpZXdNYW5hZ2VyLFxuICAvLyBFcnJvcnNcbiAgQ29kZWRFcnJvcixcbiAgVW5hdmFpbGFiaWxpdHlFcnJvcixcbn07XG5cbmV4cG9ydCAqIGZyb20gJy4vcmVxdWlyZU5hdGl2ZU1vZHVsZSc7XG5cbi8qKlxuICogQGRlcHJlY2F0ZWQgcmVuYW1lZCB0byBgRGV2aWNlRXZlbnRFbWl0dGVyYFxuICovXG5leHBvcnQgY29uc3QgUkNURGV2aWNlRXZlbnRFbWl0dGVyID0gRGV2aWNlRXZlbnRFbWl0dGVyO1xuXG5leHBvcnQgKiBmcm9tICcuL1Blcm1pc3Npb25zSW50ZXJmYWNlJztcbmV4cG9ydCAqIGZyb20gJy4vUGVybWlzc2lvbnNIb29rJztcbiJdfQ==

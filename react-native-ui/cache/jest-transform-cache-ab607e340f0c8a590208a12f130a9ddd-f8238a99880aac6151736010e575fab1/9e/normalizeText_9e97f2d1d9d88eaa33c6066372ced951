@@ -1,0 +1,16 @@
+d87f5ee7818d56fb25631a1336b636e9
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _reactNativeSizeMatters = require("react-native-size-matters");
+
+function normalize(number) {
+  var factor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0.25;
+  return (0, _reactNativeSizeMatters.moderateScale)(number, factor);
+}
+
+var _default = normalize;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJub3JtYWxpemUiLCJudW1iZXIiLCJmYWN0b3IiLCJtb2RlcmF0ZVNjYWxlIl0sInNvdXJjZXMiOlsibm9ybWFsaXplVGV4dC5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBtb2RlcmF0ZVNjYWxlIH0gZnJvbSAncmVhY3QtbmF0aXZlLXNpemUtbWF0dGVycyc7XG5mdW5jdGlvbiBub3JtYWxpemUobnVtYmVyLCBmYWN0b3IgPSAwLjI1KSB7XG4gICAgcmV0dXJuIG1vZGVyYXRlU2NhbGUobnVtYmVyLCBmYWN0b3IpO1xufVxuZXhwb3J0IGRlZmF1bHQgbm9ybWFsaXplO1xuIl0sIm1hcHBpbmdzIjoiOzs7OztBQUFBOztBQUNBLFNBQVNBLFNBQVQsQ0FBbUJDLE1BQW5CLEVBQTBDO0VBQUEsSUFBZkMsTUFBZSx1RUFBTixJQUFNO0VBQ3RDLE9BQU8sSUFBQUMscUNBQUEsRUFBY0YsTUFBZCxFQUFzQkMsTUFBdEIsQ0FBUDtBQUNIOztlQUNjRixTIn0=

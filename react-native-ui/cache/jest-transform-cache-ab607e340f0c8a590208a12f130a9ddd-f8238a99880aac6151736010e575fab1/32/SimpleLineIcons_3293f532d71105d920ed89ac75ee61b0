@@ -1,0 +1,18 @@
+bfa11372dca0d9dfadd85d40aec1c883
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _createIconSet = _interopRequireDefault(require("./createIconSet"));
+
+var _SimpleLineIcons = _interopRequireDefault(require("./vendor/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"));
+
+var _SimpleLineIcons2 = _interopRequireDefault(require("./vendor/react-native-vector-icons/glyphmaps/SimpleLineIcons.json"));
+
+var _default = (0, _createIconSet.default)(_SimpleLineIcons2.default, 'simple-line-icons', _SimpleLineIcons.default);
+
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBOztBQUNBOztBQUNBOztlQUVlLDRCQUFjQSx5QkFBZCxFQUF3QixtQkFBeEIsRUFBNkNDLHdCQUE3QyxDIiwibmFtZXMiOlsiZ2x5cGhNYXAiLCJmb250Il0sInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3NyYy9TaW1wbGVMaW5lSWNvbnMudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IGNyZWF0ZUljb25TZXQgZnJvbSAnLi9jcmVhdGVJY29uU2V0JztcbmltcG9ydCBmb250IGZyb20gJy4vdmVuZG9yL3JlYWN0LW5hdGl2ZS12ZWN0b3ItaWNvbnMvRm9udHMvU2ltcGxlTGluZUljb25zLnR0Zic7XG5pbXBvcnQgZ2x5cGhNYXAgZnJvbSAnLi92ZW5kb3IvcmVhY3QtbmF0aXZlLXZlY3Rvci1pY29ucy9nbHlwaG1hcHMvU2ltcGxlTGluZUljb25zLmpzb24nO1xuXG5leHBvcnQgZGVmYXVsdCBjcmVhdGVJY29uU2V0KGdseXBoTWFwLCAnc2ltcGxlLWxpbmUtaWNvbnMnLCBmb250KTtcbiJdfQ==

@@ -1,0 +1,15 @@
+ff8bf06902d0851387d25f89c5cb1f75
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _colors = _interopRequireDefault(require("./colors"));
+
+var _default = {
+  colors: _colors.default
+};
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJjb2xvcnMiXSwic291cmNlcyI6WyJ0aGVtZS5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgY29sb3JzIGZyb20gJy4vY29sb3JzJztcbmV4cG9ydCBkZWZhdWx0IHtcbiAgICBjb2xvcnMsXG59O1xuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQUE7O2VBQ2U7RUFDWEEsTUFBTSxFQUFOQTtBQURXLEMifQ==

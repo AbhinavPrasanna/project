@@ -1,0 +1,18 @@
+c21757d1f7167018c86a10dea037022f
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _AssetRegistry = require("react-native/Libraries/Image/AssetRegistry");
+
+Object.keys(_AssetRegistry).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _AssetRegistry[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _AssetRegistry[key];
+    }
+  });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6Ijs7OztBQUFBOztBQUFBO0VBQUE7RUFBQTtFQUFBO0lBQUE7SUFBQTtNQUFBO0lBQUE7RUFBQTtBQUFBIiwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvQXNzZXRSZWdpc3RyeS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgKiBmcm9tICdyZWFjdC1uYXRpdmUvTGlicmFyaWVzL0ltYWdlL0Fzc2V0UmVnaXN0cnknO1xuIl19

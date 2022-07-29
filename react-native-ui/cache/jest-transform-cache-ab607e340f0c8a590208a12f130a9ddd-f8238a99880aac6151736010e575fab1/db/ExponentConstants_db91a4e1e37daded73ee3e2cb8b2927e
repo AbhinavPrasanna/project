@@ -1,0 +1,11 @@
+dd975cc33e53e5de2f0b03f07047cc65
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _expoModulesCore = require("expo-modules-core");
+
+var _default = _expoModulesCore.NativeModulesProxy.ExponentConstants;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBQTs7ZUFDZUEsb0NBQW1CQyxpQiIsIm5hbWVzIjpbIk5hdGl2ZU1vZHVsZXNQcm94eSIsIkV4cG9uZW50Q29uc3RhbnRzIl0sInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3NyYy9FeHBvbmVudENvbnN0YW50cy50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBOYXRpdmVNb2R1bGVzUHJveHkgfSBmcm9tICdleHBvLW1vZHVsZXMtY29yZSc7XG5leHBvcnQgZGVmYXVsdCBOYXRpdmVNb2R1bGVzUHJveHkuRXhwb25lbnRDb25zdGFudHM7XG4iXX0=

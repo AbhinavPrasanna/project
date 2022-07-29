@@ -1,0 +1,28 @@
+8086d8e9a0043e0c29f07d22bbf74030
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Gruppo_400Regular = void 0;
+Object.defineProperty(exports, "__metadata__", {
+  enumerable: true,
+  get: function get() {
+    return _metadata.default;
+  }
+});
+Object.defineProperty(exports, "useFonts", {
+  enumerable: true,
+  get: function get() {
+    return _useFonts.useFonts;
+  }
+});
+
+var _useFonts = require("./useFonts");
+
+var _metadata = _interopRequireDefault(require("./metadata.json"));
+
+var Gruppo_400Regular = require("./Gruppo_400Regular.ttf");
+
+exports.Gruppo_400Regular = Gruppo_400Regular;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJHcnVwcG9fNDAwUmVndWxhciIsInJlcXVpcmUiXSwic291cmNlcyI6WyJpbmRleC5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyIvLy8gR2VuZXJhdGVkIGJ5IGV4cG8tZ29vZ2xlLWZvbnRzL2dlbmVyYXRvclxuLy8vIERvIG5vdCBlZGl0IGJ5IGhhbmQgdW5sZXNzIHlvdSBrbm93IHdoYXQgeW91IGFyZSBkb2luZ1xuLy8vXG5cbmV4cG9ydCB7IHVzZUZvbnRzIH0gZnJvbSAnLi91c2VGb250cyc7XG5cbmV4cG9ydCB7IGRlZmF1bHQgYXMgX19tZXRhZGF0YV9fIH0gZnJvbSAnLi9tZXRhZGF0YS5qc29uJztcbmV4cG9ydCBjb25zdCBHcnVwcG9fNDAwUmVndWxhciA9IHJlcXVpcmUoJy4vR3J1cHBvXzQwMFJlZ3VsYXIudHRmJyk7XG4iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFJQTs7QUFFQTs7QUFDTyxJQUFNQSxpQkFBaUIsR0FBR0MsT0FBTywyQkFBakMifQ==

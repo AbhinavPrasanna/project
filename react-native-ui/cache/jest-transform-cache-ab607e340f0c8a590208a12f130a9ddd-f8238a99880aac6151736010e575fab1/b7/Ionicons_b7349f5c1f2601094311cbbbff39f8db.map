@@ -1,0 +1,1 @@
+{"version":3,"names":["Ionicons"],"sources":["Ionicons.js"],"sourcesContent":["import Ionicons from './build/Ionicons';\nexport default Ionicons;\n"],"mappings":";;;;;;;AAAA;;eACeA,iB"}

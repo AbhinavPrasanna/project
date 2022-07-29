@@ -1,0 +1,1 @@
+{"version":3,"mappings":";;;;;;;;;;;;;AAAA;;AAAA;EAAA;EAAA;EAAA;EAAA;IAAA;IAAA;MAAA;IAAA;EAAA;AAAA;;AACA","names":[],"sourceRoot":"","sources":["../src/index.ts"],"sourcesContent":["export * from './Font';\nexport { useFonts } from './FontHooks';\n"]}

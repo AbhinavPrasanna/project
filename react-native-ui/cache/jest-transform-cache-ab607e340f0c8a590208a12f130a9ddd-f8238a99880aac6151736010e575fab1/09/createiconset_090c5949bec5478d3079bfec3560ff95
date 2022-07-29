@@ -1,0 +1,292 @@
+95dba9b11bff150e60bc83d105417d89
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.NativeIconAPI = exports.DEFAULT_ICON_SIZE = exports.DEFAULT_ICON_COLOR = void 0;
+exports.default = createIconSet;
+
+var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
+
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+
+var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutProperties"));
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactNative = require("react-native");
+
+var _ensureNativeModuleAvailable = _interopRequireDefault(require("./ensure-native-module-available"));
+
+var _createIconSourceCache = _interopRequireDefault(require("./create-icon-source-cache"));
+
+var _iconButton = _interopRequireDefault(require("./icon-button"));
+
+var _jsxRuntime = require("react/jsx-runtime");
+
+var _excluded = ["name", "size", "color", "style", "children"];
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _regeneratorRuntime() { "use strict"; _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == typeof value && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator.return && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, catch: function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+var NativeIconAPI = _reactNative.NativeModules.RNVectorIconsManager || _reactNative.NativeModules.RNVectorIconsModule;
+exports.NativeIconAPI = NativeIconAPI;
+var DEFAULT_ICON_SIZE = 12;
+exports.DEFAULT_ICON_SIZE = DEFAULT_ICON_SIZE;
+var DEFAULT_ICON_COLOR = 'black';
+exports.DEFAULT_ICON_COLOR = DEFAULT_ICON_COLOR;
+
+function createIconSet(glyphMap, fontFamily, fontFile, fontStyle) {
+  var fontBasename = fontFile ? fontFile.replace(/\.(otf|ttf)$/, '') : fontFamily;
+
+  var fontReference = _reactNative.Platform.select({
+    windows: "/Assets/" + fontFile + "#" + fontFamily,
+    android: fontBasename,
+    web: fontBasename,
+    default: fontFamily
+  });
+
+  var Icon = function (_PureComponent) {
+    (0, _inherits2.default)(Icon, _PureComponent);
+
+    var _super = _createSuper(Icon);
+
+    function Icon() {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, Icon);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = _super.call.apply(_super, [this].concat(args));
+      _this.root = null;
+
+      _this.handleRef = function (ref) {
+        _this.root = ref;
+      };
+
+      return _this;
+    }
+
+    (0, _createClass2.default)(Icon, [{
+      key: "setNativeProps",
+      value: function setNativeProps(nativeProps) {
+        if (this.root) {
+          this.root.setNativeProps(nativeProps);
+        }
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this$props = this.props,
+            name = _this$props.name,
+            size = _this$props.size,
+            color = _this$props.color,
+            style = _this$props.style,
+            children = _this$props.children,
+            props = (0, _objectWithoutProperties2.default)(_this$props, _excluded);
+        var glyph = name ? glyphMap[name] || '?' : '';
+
+        if (typeof glyph === 'number') {
+          glyph = String.fromCodePoint(glyph);
+        }
+
+        var styleDefaults = {
+          fontSize: size,
+          color: color
+        };
+        var styleOverrides = {
+          fontFamily: fontReference,
+          fontWeight: 'normal',
+          fontStyle: 'normal'
+        };
+        props.style = [styleDefaults, style, styleOverrides, fontStyle || {}];
+        props.ref = this.handleRef;
+        return (0, _jsxRuntime.jsxs)(_reactNative.Text, _objectSpread(_objectSpread({
+          selectable: false
+        }, props), {}, {
+          children: [glyph, children]
+        }));
+      }
+    }]);
+    return Icon;
+  }(_react.PureComponent);
+
+  Icon.defaultProps = {
+    size: DEFAULT_ICON_SIZE,
+    allowFontScaling: false
+  };
+  var imageSourceCache = (0, _createIconSourceCache.default)();
+
+  function resolveGlyph(name) {
+    var glyph = glyphMap[name] || '?';
+
+    if (typeof glyph === 'number') {
+      return String.fromCodePoint(glyph);
+    }
+
+    return glyph;
+  }
+
+  function getImageSourceSync(name) {
+    var size = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DEFAULT_ICON_SIZE;
+    var color = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : DEFAULT_ICON_COLOR;
+    (0, _ensureNativeModuleAvailable.default)();
+    var glyph = resolveGlyph(name);
+    var processedColor = (0, _reactNative.processColor)(color);
+    var cacheKey = glyph + ":" + size + ":" + processedColor;
+
+    if (imageSourceCache.has(cacheKey)) {
+      return imageSourceCache.get(cacheKey);
+    }
+
+    try {
+      var imagePath = NativeIconAPI.getImageForFontSync(fontReference, glyph, size, processedColor);
+      var value = {
+        uri: imagePath,
+        scale: _reactNative.PixelRatio.get()
+      };
+      imageSourceCache.setValue(cacheKey, value);
+      return value;
+    } catch (error) {
+      imageSourceCache.setError(cacheKey, error);
+      throw error;
+    }
+  }
+
+  function getImageSource(name) {
+    var size,
+        color,
+        glyph,
+        processedColor,
+        cacheKey,
+        imagePath,
+        value,
+        _args = arguments;
+    return _regeneratorRuntime().async(function getImageSource$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            size = _args.length > 1 && _args[1] !== undefined ? _args[1] : DEFAULT_ICON_SIZE;
+            color = _args.length > 2 && _args[2] !== undefined ? _args[2] : DEFAULT_ICON_COLOR;
+            (0, _ensureNativeModuleAvailable.default)();
+            glyph = resolveGlyph(name);
+            processedColor = (0, _reactNative.processColor)(color);
+            cacheKey = glyph + ":" + size + ":" + processedColor;
+
+            if (!imageSourceCache.has(cacheKey)) {
+              _context.next = 8;
+              break;
+            }
+
+            return _context.abrupt("return", imageSourceCache.get(cacheKey));
+
+          case 8:
+            _context.prev = 8;
+            _context.next = 11;
+            return _regeneratorRuntime().awrap(NativeIconAPI.getImageForFont(fontReference, glyph, size, processedColor));
+
+          case 11:
+            imagePath = _context.sent;
+            value = {
+              uri: imagePath,
+              scale: _reactNative.PixelRatio.get()
+            };
+            imageSourceCache.setValue(cacheKey, value);
+            return _context.abrupt("return", value);
+
+          case 17:
+            _context.prev = 17;
+            _context.t0 = _context["catch"](8);
+            imageSourceCache.setError(cacheKey, _context.t0);
+            throw _context.t0;
+
+          case 21:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, null, null, [[8, 17]], Promise);
+  }
+
+  function loadFont() {
+    var file,
+        _args2 = arguments;
+    return _regeneratorRuntime().async(function loadFont$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            file = _args2.length > 0 && _args2[0] !== undefined ? _args2[0] : fontFile;
+
+            if (!(_reactNative.Platform.OS === 'ios')) {
+              _context2.next = 7;
+              break;
+            }
+
+            (0, _ensureNativeModuleAvailable.default)();
+
+            if (file) {
+              _context2.next = 5;
+              break;
+            }
+
+            throw new Error('Unable to load font, because no file was specified. ');
+
+          case 5:
+            _context2.next = 7;
+            return _regeneratorRuntime().awrap(NativeIconAPI.loadFontWithFileName.apply(NativeIconAPI, (0, _toConsumableArray2.default)(file.split('.'))));
+
+          case 7:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, null, null, null, Promise);
+  }
+
+  function hasIcon(name) {
+    return Object.prototype.hasOwnProperty.call(glyphMap, name);
+  }
+
+  function getRawGlyphMap() {
+    return glyphMap;
+  }
+
+  function getFontFamily() {
+    return fontReference;
+  }
+
+  Icon.Button = (0, _iconButton.default)(Icon);
+  Icon.getImageSource = getImageSource;
+  Icon.getImageSourceSync = getImageSourceSync;
+  Icon.loadFont = loadFont;
+  Icon.hasIcon = hasIcon;
+  Icon.getRawGlyphMap = getRawGlyphMap;
+  Icon.getFontFamily = getFontFamily;
+  return Icon;
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJOYXRpdmVJY29uQVBJIiwiTmF0aXZlTW9kdWxlcyIsIlJOVmVjdG9ySWNvbnNNYW5hZ2VyIiwiUk5WZWN0b3JJY29uc01vZHVsZSIsIkRFRkFVTFRfSUNPTl9TSVpFIiwiREVGQVVMVF9JQ09OX0NPTE9SIiwiY3JlYXRlSWNvblNldCIsImdseXBoTWFwIiwiZm9udEZhbWlseSIsImZvbnRGaWxlIiwiZm9udFN0eWxlIiwiZm9udEJhc2VuYW1lIiwicmVwbGFjZSIsImZvbnRSZWZlcmVuY2UiLCJQbGF0Zm9ybSIsInNlbGVjdCIsIndpbmRvd3MiLCJhbmRyb2lkIiwid2ViIiwiZGVmYXVsdCIsIkljb24iLCJyb290IiwiaGFuZGxlUmVmIiwicmVmIiwibmF0aXZlUHJvcHMiLCJzZXROYXRpdmVQcm9wcyIsInByb3BzIiwibmFtZSIsInNpemUiLCJjb2xvciIsInN0eWxlIiwiY2hpbGRyZW4iLCJnbHlwaCIsIlN0cmluZyIsImZyb21Db2RlUG9pbnQiLCJzdHlsZURlZmF1bHRzIiwiZm9udFNpemUiLCJzdHlsZU92ZXJyaWRlcyIsImZvbnRXZWlnaHQiLCJQdXJlQ29tcG9uZW50IiwiZGVmYXVsdFByb3BzIiwiYWxsb3dGb250U2NhbGluZyIsImltYWdlU291cmNlQ2FjaGUiLCJjcmVhdGVJY29uU291cmNlQ2FjaGUiLCJyZXNvbHZlR2x5cGgiLCJnZXRJbWFnZVNvdXJjZVN5bmMiLCJlbnN1cmVOYXRpdmVNb2R1bGVBdmFpbGFibGUiLCJwcm9jZXNzZWRDb2xvciIsInByb2Nlc3NDb2xvciIsImNhY2hlS2V5IiwiaGFzIiwiZ2V0IiwiaW1hZ2VQYXRoIiwiZ2V0SW1hZ2VGb3JGb250U3luYyIsInZhbHVlIiwidXJpIiwic2NhbGUiLCJQaXhlbFJhdGlvIiwic2V0VmFsdWUiLCJlcnJvciIsInNldEVycm9yIiwiZ2V0SW1hZ2VTb3VyY2UiLCJnZXRJbWFnZUZvckZvbnQiLCJsb2FkRm9udCIsImZpbGUiLCJPUyIsIkVycm9yIiwibG9hZEZvbnRXaXRoRmlsZU5hbWUiLCJzcGxpdCIsImhhc0ljb24iLCJPYmplY3QiLCJwcm90b3R5cGUiLCJoYXNPd25Qcm9wZXJ0eSIsImNhbGwiLCJnZXRSYXdHbHlwaE1hcCIsImdldEZvbnRGYW1pbHkiLCJCdXR0b24iLCJjcmVhdGVJY29uQnV0dG9uQ29tcG9uZW50Il0sInNvdXJjZXMiOlsiY3JlYXRlLWljb24tc2V0LmpzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyBQdXJlQ29tcG9uZW50IH0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IHtcbiAgTmF0aXZlTW9kdWxlcyxcbiAgUGxhdGZvcm0sXG4gIFBpeGVsUmF0aW8sXG4gIHByb2Nlc3NDb2xvcixcbiAgVGV4dCxcbn0gZnJvbSAncmVhY3QtbmF0aXZlJztcblxuaW1wb3J0IGVuc3VyZU5hdGl2ZU1vZHVsZUF2YWlsYWJsZSBmcm9tICcuL2Vuc3VyZS1uYXRpdmUtbW9kdWxlLWF2YWlsYWJsZSc7XG5pbXBvcnQgY3JlYXRlSWNvblNvdXJjZUNhY2hlIGZyb20gJy4vY3JlYXRlLWljb24tc291cmNlLWNhY2hlJztcbmltcG9ydCBjcmVhdGVJY29uQnV0dG9uQ29tcG9uZW50IGZyb20gJy4vaWNvbi1idXR0b24nO1xuXG5leHBvcnQgY29uc3QgTmF0aXZlSWNvbkFQSSA9XG4gIE5hdGl2ZU1vZHVsZXMuUk5WZWN0b3JJY29uc01hbmFnZXIgfHwgTmF0aXZlTW9kdWxlcy5STlZlY3Rvckljb25zTW9kdWxlO1xuXG5leHBvcnQgY29uc3QgREVGQVVMVF9JQ09OX1NJWkUgPSAxMjtcbmV4cG9ydCBjb25zdCBERUZBVUxUX0lDT05fQ09MT1IgPSAnYmxhY2snO1xuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBjcmVhdGVJY29uU2V0KFxuICBnbHlwaE1hcCxcbiAgZm9udEZhbWlseSxcbiAgZm9udEZpbGUsXG4gIGZvbnRTdHlsZVxuKSB7XG4gIC8vIEFuZHJvaWQgZG9lc24ndCBjYXJlIGFib3V0IGFjdHVhbCBmb250RmFtaWx5IG5hbWUsIGl0IHdpbGwgb25seSBsb29rIGluIGZvbnRzIGZvbGRlci5cbiAgY29uc3QgZm9udEJhc2VuYW1lID0gZm9udEZpbGVcbiAgICA/IGZvbnRGaWxlLnJlcGxhY2UoL1xcLihvdGZ8dHRmKSQvLCAnJylcbiAgICA6IGZvbnRGYW1pbHk7XG5cbiAgY29uc3QgZm9udFJlZmVyZW5jZSA9IFBsYXRmb3JtLnNlbGVjdCh7XG4gICAgd2luZG93czogYC9Bc3NldHMvJHtmb250RmlsZX0jJHtmb250RmFtaWx5fWAsXG4gICAgYW5kcm9pZDogZm9udEJhc2VuYW1lLFxuICAgIHdlYjogZm9udEJhc2VuYW1lLFxuICAgIGRlZmF1bHQ6IGZvbnRGYW1pbHksXG4gIH0pO1xuXG4gIGNsYXNzIEljb24gZXh0ZW5kcyBQdXJlQ29tcG9uZW50IHtcbiAgICByb290ID0gbnVsbDtcblxuICAgIHN0YXRpYyBkZWZhdWx0UHJvcHMgPSB7XG4gICAgICBzaXplOiBERUZBVUxUX0lDT05fU0laRSxcbiAgICAgIGFsbG93Rm9udFNjYWxpbmc6IGZhbHNlLFxuICAgIH07XG5cbiAgICBzZXROYXRpdmVQcm9wcyhuYXRpdmVQcm9wcykge1xuICAgICAgaWYgKHRoaXMucm9vdCkge1xuICAgICAgICB0aGlzLnJvb3Quc2V0TmF0aXZlUHJvcHMobmF0aXZlUHJvcHMpO1xuICAgICAgfVxuICAgIH1cblxuICAgIGhhbmRsZVJlZiA9IHJlZiA9PiB7XG4gICAgICB0aGlzLnJvb3QgPSByZWY7XG4gICAgfTtcblxuICAgIHJlbmRlcigpIHtcbiAgICAgIGNvbnN0IHsgbmFtZSwgc2l6ZSwgY29sb3IsIHN0eWxlLCBjaGlsZHJlbiwgLi4ucHJvcHMgfSA9IHRoaXMucHJvcHM7XG5cbiAgICAgIGxldCBnbHlwaCA9IG5hbWUgPyBnbHlwaE1hcFtuYW1lXSB8fCAnPycgOiAnJztcbiAgICAgIGlmICh0eXBlb2YgZ2x5cGggPT09ICdudW1iZXInKSB7XG4gICAgICAgIGdseXBoID0gU3RyaW5nLmZyb21Db2RlUG9pbnQoZ2x5cGgpO1xuICAgICAgfVxuXG4gICAgICBjb25zdCBzdHlsZURlZmF1bHRzID0ge1xuICAgICAgICBmb250U2l6ZTogc2l6ZSxcbiAgICAgICAgY29sb3IsXG4gICAgICB9O1xuXG4gICAgICBjb25zdCBzdHlsZU92ZXJyaWRlcyA9IHtcbiAgICAgICAgZm9udEZhbWlseTogZm9udFJlZmVyZW5jZSxcbiAgICAgICAgZm9udFdlaWdodDogJ25vcm1hbCcsXG4gICAgICAgIGZvbnRTdHlsZTogJ25vcm1hbCcsXG4gICAgICB9O1xuXG4gICAgICBwcm9wcy5zdHlsZSA9IFtzdHlsZURlZmF1bHRzLCBzdHlsZSwgc3R5bGVPdmVycmlkZXMsIGZvbnRTdHlsZSB8fCB7fV07XG4gICAgICBwcm9wcy5yZWYgPSB0aGlzLmhhbmRsZVJlZjtcblxuICAgICAgcmV0dXJuIChcbiAgICAgICAgPFRleHQgc2VsZWN0YWJsZT17ZmFsc2V9IHsuLi5wcm9wc30+XG4gICAgICAgICAge2dseXBofVxuICAgICAgICAgIHtjaGlsZHJlbn1cbiAgICAgICAgPC9UZXh0PlxuICAgICAgKTtcbiAgICB9XG4gIH1cblxuICBjb25zdCBpbWFnZVNvdXJjZUNhY2hlID0gY3JlYXRlSWNvblNvdXJjZUNhY2hlKCk7XG5cbiAgZnVuY3Rpb24gcmVzb2x2ZUdseXBoKG5hbWUpIHtcbiAgICBjb25zdCBnbHlwaCA9IGdseXBoTWFwW25hbWVdIHx8ICc/JztcbiAgICBpZiAodHlwZW9mIGdseXBoID09PSAnbnVtYmVyJykge1xuICAgICAgcmV0dXJuIFN0cmluZy5mcm9tQ29kZVBvaW50KGdseXBoKTtcbiAgICB9XG4gICAgcmV0dXJuIGdseXBoO1xuICB9XG5cbiAgZnVuY3Rpb24gZ2V0SW1hZ2VTb3VyY2VTeW5jKFxuICAgIG5hbWUsXG4gICAgc2l6ZSA9IERFRkFVTFRfSUNPTl9TSVpFLFxuICAgIGNvbG9yID0gREVGQVVMVF9JQ09OX0NPTE9SXG4gICkge1xuICAgIGVuc3VyZU5hdGl2ZU1vZHVsZUF2YWlsYWJsZSgpO1xuXG4gICAgY29uc3QgZ2x5cGggPSByZXNvbHZlR2x5cGgobmFtZSk7XG4gICAgY29uc3QgcHJvY2Vzc2VkQ29sb3IgPSBwcm9jZXNzQ29sb3IoY29sb3IpO1xuICAgIGNvbnN0IGNhY2hlS2V5ID0gYCR7Z2x5cGh9OiR7c2l6ZX06JHtwcm9jZXNzZWRDb2xvcn1gO1xuXG4gICAgaWYgKGltYWdlU291cmNlQ2FjaGUuaGFzKGNhY2hlS2V5KSkge1xuICAgICAgcmV0dXJuIGltYWdlU291cmNlQ2FjaGUuZ2V0KGNhY2hlS2V5KTtcbiAgICB9XG4gICAgdHJ5IHtcbiAgICAgIGNvbnN0IGltYWdlUGF0aCA9IE5hdGl2ZUljb25BUEkuZ2V0SW1hZ2VGb3JGb250U3luYyhcbiAgICAgICAgZm9udFJlZmVyZW5jZSxcbiAgICAgICAgZ2x5cGgsXG4gICAgICAgIHNpemUsXG4gICAgICAgIHByb2Nlc3NlZENvbG9yXG4gICAgICApO1xuICAgICAgY29uc3QgdmFsdWUgPSB7IHVyaTogaW1hZ2VQYXRoLCBzY2FsZTogUGl4ZWxSYXRpby5nZXQoKSB9O1xuICAgICAgaW1hZ2VTb3VyY2VDYWNoZS5zZXRWYWx1ZShjYWNoZUtleSwgdmFsdWUpO1xuICAgICAgcmV0dXJuIHZhbHVlO1xuICAgIH0gY2F0Y2ggKGVycm9yKSB7XG4gICAgICBpbWFnZVNvdXJjZUNhY2hlLnNldEVycm9yKGNhY2hlS2V5LCBlcnJvcik7XG4gICAgICB0aHJvdyBlcnJvcjtcbiAgICB9XG4gIH1cblxuICBhc3luYyBmdW5jdGlvbiBnZXRJbWFnZVNvdXJjZShcbiAgICBuYW1lLFxuICAgIHNpemUgPSBERUZBVUxUX0lDT05fU0laRSxcbiAgICBjb2xvciA9IERFRkFVTFRfSUNPTl9DT0xPUlxuICApIHtcbiAgICBlbnN1cmVOYXRpdmVNb2R1bGVBdmFpbGFibGUoKTtcblxuICAgIGNvbnN0IGdseXBoID0gcmVzb2x2ZUdseXBoKG5hbWUpO1xuICAgIGNvbnN0IHByb2Nlc3NlZENvbG9yID0gcHJvY2Vzc0NvbG9yKGNvbG9yKTtcbiAgICBjb25zdCBjYWNoZUtleSA9IGAke2dseXBofToke3NpemV9OiR7cHJvY2Vzc2VkQ29sb3J9YDtcblxuICAgIGlmIChpbWFnZVNvdXJjZUNhY2hlLmhhcyhjYWNoZUtleSkpIHtcbiAgICAgIHJldHVybiBpbWFnZVNvdXJjZUNhY2hlLmdldChjYWNoZUtleSk7XG4gICAgfVxuICAgIHRyeSB7XG4gICAgICBjb25zdCBpbWFnZVBhdGggPSBhd2FpdCBOYXRpdmVJY29uQVBJLmdldEltYWdlRm9yRm9udChcbiAgICAgICAgZm9udFJlZmVyZW5jZSxcbiAgICAgICAgZ2x5cGgsXG4gICAgICAgIHNpemUsXG4gICAgICAgIHByb2Nlc3NlZENvbG9yXG4gICAgICApO1xuICAgICAgY29uc3QgdmFsdWUgPSB7IHVyaTogaW1hZ2VQYXRoLCBzY2FsZTogUGl4ZWxSYXRpby5nZXQoKSB9O1xuICAgICAgaW1hZ2VTb3VyY2VDYWNoZS5zZXRWYWx1ZShjYWNoZUtleSwgdmFsdWUpO1xuICAgICAgcmV0dXJuIHZhbHVlO1xuICAgIH0gY2F0Y2ggKGVycm9yKSB7XG4gICAgICBpbWFnZVNvdXJjZUNhY2hlLnNldEVycm9yKGNhY2hlS2V5LCBlcnJvcik7XG4gICAgICB0aHJvdyBlcnJvcjtcbiAgICB9XG4gIH1cblxuICBhc3luYyBmdW5jdGlvbiBsb2FkRm9udChmaWxlID0gZm9udEZpbGUpIHtcbiAgICBpZiAoUGxhdGZvcm0uT1MgPT09ICdpb3MnKSB7XG4gICAgICBlbnN1cmVOYXRpdmVNb2R1bGVBdmFpbGFibGUoKTtcbiAgICAgIGlmICghZmlsZSkge1xuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoJ1VuYWJsZSB0byBsb2FkIGZvbnQsIGJlY2F1c2Ugbm8gZmlsZSB3YXMgc3BlY2lmaWVkLiAnKTtcbiAgICAgIH1cbiAgICAgIGF3YWl0IE5hdGl2ZUljb25BUEkubG9hZEZvbnRXaXRoRmlsZU5hbWUoLi4uZmlsZS5zcGxpdCgnLicpKTtcbiAgICB9XG4gIH1cblxuICBmdW5jdGlvbiBoYXNJY29uKG5hbWUpIHtcbiAgICByZXR1cm4gT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsKGdseXBoTWFwLCBuYW1lKTtcbiAgfVxuXG4gIGZ1bmN0aW9uIGdldFJhd0dseXBoTWFwKCkge1xuICAgIHJldHVybiBnbHlwaE1hcDtcbiAgfVxuXG4gIGZ1bmN0aW9uIGdldEZvbnRGYW1pbHkoKSB7XG4gICAgcmV0dXJuIGZvbnRSZWZlcmVuY2U7XG4gIH1cblxuICBJY29uLkJ1dHRvbiA9IGNyZWF0ZUljb25CdXR0b25Db21wb25lbnQoSWNvbik7XG4gIEljb24uZ2V0SW1hZ2VTb3VyY2UgPSBnZXRJbWFnZVNvdXJjZTtcbiAgSWNvbi5nZXRJbWFnZVNvdXJjZVN5bmMgPSBnZXRJbWFnZVNvdXJjZVN5bmM7XG4gIEljb24ubG9hZEZvbnQgPSBsb2FkRm9udDtcbiAgSWNvbi5oYXNJY29uID0gaGFzSWNvbjtcbiAgSWNvbi5nZXRSYXdHbHlwaE1hcCA9IGdldFJhd0dseXBoTWFwO1xuICBJY29uLmdldEZvbnRGYW1pbHkgPSBnZXRGb250RmFtaWx5O1xuXG4gIHJldHVybiBJY29uO1xufVxuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTs7QUFDQTs7QUFRQTs7QUFDQTs7QUFDQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFFTyxJQUFNQSxhQUFhLEdBQ3hCQywwQkFBQSxDQUFjQyxvQkFBZCxJQUFzQ0QsMEJBQUEsQ0FBY0UsbUJBRC9DOztBQUdBLElBQU1DLGlCQUFpQixHQUFHLEVBQTFCOztBQUNBLElBQU1DLGtCQUFrQixHQUFHLE9BQTNCOzs7QUFFUSxTQUFTQyxhQUFULENBQ2JDLFFBRGEsRUFFYkMsVUFGYSxFQUdiQyxRQUhhLEVBSWJDLFNBSmEsRUFLYjtFQUVBLElBQU1DLFlBQVksR0FBR0YsUUFBUSxHQUN6QkEsUUFBUSxDQUFDRyxPQUFULENBQWlCLGNBQWpCLEVBQWlDLEVBQWpDLENBRHlCLEdBRXpCSixVQUZKOztFQUlBLElBQU1LLGFBQWEsR0FBR0MscUJBQUEsQ0FBU0MsTUFBVCxDQUFnQjtJQUNwQ0MsT0FBTyxlQUFhUCxRQUFiLFNBQXlCRCxVQURJO0lBRXBDUyxPQUFPLEVBQUVOLFlBRjJCO0lBR3BDTyxHQUFHLEVBQUVQLFlBSCtCO0lBSXBDUSxPQUFPLEVBQUVYO0VBSjJCLENBQWhCLENBQXRCOztFQU5BLElBYU1ZLElBYk47SUFBQTs7SUFBQTs7SUFBQTtNQUFBOztNQUFBOztNQUFBO1FBQUE7TUFBQTs7TUFBQTtNQUFBLE1BY0VDLElBZEYsR0FjUyxJQWRUOztNQUFBLE1BMkJFQyxTQTNCRixHQTJCYyxVQUFBQyxHQUFHLEVBQUk7UUFDakIsTUFBS0YsSUFBTCxHQUFZRSxHQUFaO01BQ0QsQ0E3Qkg7O01BQUE7SUFBQTs7SUFBQTtNQUFBO01BQUEsT0FxQkUsd0JBQWVDLFdBQWYsRUFBNEI7UUFDMUIsSUFBSSxLQUFLSCxJQUFULEVBQWU7VUFDYixLQUFLQSxJQUFMLENBQVVJLGNBQVYsQ0FBeUJELFdBQXpCO1FBQ0Q7TUFDRjtJQXpCSDtNQUFBO01BQUEsT0ErQkUsa0JBQVM7UUFDUCxrQkFBeUQsS0FBS0UsS0FBOUQ7UUFBQSxJQUFRQyxJQUFSLGVBQVFBLElBQVI7UUFBQSxJQUFjQyxJQUFkLGVBQWNBLElBQWQ7UUFBQSxJQUFvQkMsS0FBcEIsZUFBb0JBLEtBQXBCO1FBQUEsSUFBMkJDLEtBQTNCLGVBQTJCQSxLQUEzQjtRQUFBLElBQWtDQyxRQUFsQyxlQUFrQ0EsUUFBbEM7UUFBQSxJQUErQ0wsS0FBL0M7UUFFQSxJQUFJTSxLQUFLLEdBQUdMLElBQUksR0FBR3BCLFFBQVEsQ0FBQ29CLElBQUQsQ0FBUixJQUFrQixHQUFyQixHQUEyQixFQUEzQzs7UUFDQSxJQUFJLE9BQU9LLEtBQVAsS0FBaUIsUUFBckIsRUFBK0I7VUFDN0JBLEtBQUssR0FBR0MsTUFBTSxDQUFDQyxhQUFQLENBQXFCRixLQUFyQixDQUFSO1FBQ0Q7O1FBRUQsSUFBTUcsYUFBYSxHQUFHO1VBQ3BCQyxRQUFRLEVBQUVSLElBRFU7VUFFcEJDLEtBQUssRUFBTEE7UUFGb0IsQ0FBdEI7UUFLQSxJQUFNUSxjQUFjLEdBQUc7VUFDckI3QixVQUFVLEVBQUVLLGFBRFM7VUFFckJ5QixVQUFVLEVBQUUsUUFGUztVQUdyQjVCLFNBQVMsRUFBRTtRQUhVLENBQXZCO1FBTUFnQixLQUFLLENBQUNJLEtBQU4sR0FBYyxDQUFDSyxhQUFELEVBQWdCTCxLQUFoQixFQUF1Qk8sY0FBdkIsRUFBdUMzQixTQUFTLElBQUksRUFBcEQsQ0FBZDtRQUNBZ0IsS0FBSyxDQUFDSCxHQUFOLEdBQVksS0FBS0QsU0FBakI7UUFFQSxPQUNFLHNCQUFDLGlCQUFEO1VBQU0sVUFBVSxFQUFFO1FBQWxCLEdBQTZCSSxLQUE3QjtVQUFBLFdBQ0dNLEtBREgsRUFFR0QsUUFGSDtRQUFBLEdBREY7TUFNRDtJQTNESDtJQUFBO0VBQUEsRUFhbUJRLG9CQWJuQjs7RUFhTW5CLElBYk4sQ0FnQlNvQixZQWhCVCxHQWdCd0I7SUFDcEJaLElBQUksRUFBRXhCLGlCQURjO0lBRXBCcUMsZ0JBQWdCLEVBQUU7RUFGRSxDQWhCeEI7RUE4REEsSUFBTUMsZ0JBQWdCLEdBQUcsSUFBQUMsOEJBQUEsR0FBekI7O0VBRUEsU0FBU0MsWUFBVCxDQUFzQmpCLElBQXRCLEVBQTRCO0lBQzFCLElBQU1LLEtBQUssR0FBR3pCLFFBQVEsQ0FBQ29CLElBQUQsQ0FBUixJQUFrQixHQUFoQzs7SUFDQSxJQUFJLE9BQU9LLEtBQVAsS0FBaUIsUUFBckIsRUFBK0I7TUFDN0IsT0FBT0MsTUFBTSxDQUFDQyxhQUFQLENBQXFCRixLQUFyQixDQUFQO0lBQ0Q7O0lBQ0QsT0FBT0EsS0FBUDtFQUNEOztFQUVELFNBQVNhLGtCQUFULENBQ0VsQixJQURGLEVBSUU7SUFBQSxJQUZBQyxJQUVBLHVFQUZPeEIsaUJBRVA7SUFBQSxJQURBeUIsS0FDQSx1RUFEUXhCLGtCQUNSO0lBQ0EsSUFBQXlDLG9DQUFBO0lBRUEsSUFBTWQsS0FBSyxHQUFHWSxZQUFZLENBQUNqQixJQUFELENBQTFCO0lBQ0EsSUFBTW9CLGNBQWMsR0FBRyxJQUFBQyx5QkFBQSxFQUFhbkIsS0FBYixDQUF2QjtJQUNBLElBQU1vQixRQUFRLEdBQU1qQixLQUFOLFNBQWVKLElBQWYsU0FBdUJtQixjQUFyQzs7SUFFQSxJQUFJTCxnQkFBZ0IsQ0FBQ1EsR0FBakIsQ0FBcUJELFFBQXJCLENBQUosRUFBb0M7TUFDbEMsT0FBT1AsZ0JBQWdCLENBQUNTLEdBQWpCLENBQXFCRixRQUFyQixDQUFQO0lBQ0Q7O0lBQ0QsSUFBSTtNQUNGLElBQU1HLFNBQVMsR0FBR3BELGFBQWEsQ0FBQ3FELG1CQUFkLENBQ2hCeEMsYUFEZ0IsRUFFaEJtQixLQUZnQixFQUdoQkosSUFIZ0IsRUFJaEJtQixjQUpnQixDQUFsQjtNQU1BLElBQU1PLEtBQUssR0FBRztRQUFFQyxHQUFHLEVBQUVILFNBQVA7UUFBa0JJLEtBQUssRUFBRUMsdUJBQUEsQ0FBV04sR0FBWDtNQUF6QixDQUFkO01BQ0FULGdCQUFnQixDQUFDZ0IsUUFBakIsQ0FBMEJULFFBQTFCLEVBQW9DSyxLQUFwQztNQUNBLE9BQU9BLEtBQVA7SUFDRCxDQVZELENBVUUsT0FBT0ssS0FBUCxFQUFjO01BQ2RqQixnQkFBZ0IsQ0FBQ2tCLFFBQWpCLENBQTBCWCxRQUExQixFQUFvQ1UsS0FBcEM7TUFDQSxNQUFNQSxLQUFOO0lBQ0Q7RUFDRjs7RUFFRCxTQUFlRSxjQUFmLENBQ0VsQyxJQURGO0lBQUE7SUFBQTtJQUFBO0lBQUE7SUFBQTtJQUFBO0lBQUE7SUFBQTtJQUFBO01BQUE7UUFBQTtVQUFBO1lBRUVDLElBRkYsMkRBRVN4QixpQkFGVDtZQUdFeUIsS0FIRiwyREFHVXhCLGtCQUhWO1lBS0UsSUFBQXlDLG9DQUFBO1lBRU1kLEtBUFIsR0FPZ0JZLFlBQVksQ0FBQ2pCLElBQUQsQ0FQNUI7WUFRUW9CLGNBUlIsR0FReUIsSUFBQUMseUJBQUEsRUFBYW5CLEtBQWIsQ0FSekI7WUFTUW9CLFFBVFIsR0FTc0JqQixLQVR0QixTQVMrQkosSUFUL0IsU0FTdUNtQixjQVR2Qzs7WUFBQSxLQVdNTCxnQkFBZ0IsQ0FBQ1EsR0FBakIsQ0FBcUJELFFBQXJCLENBWE47Y0FBQTtjQUFBO1lBQUE7O1lBQUEsaUNBWVdQLGdCQUFnQixDQUFDUyxHQUFqQixDQUFxQkYsUUFBckIsQ0FaWDs7VUFBQTtZQUFBO1lBQUE7WUFBQSxtQ0FlNEJqRCxhQUFhLENBQUM4RCxlQUFkLENBQ3RCakQsYUFEc0IsRUFFdEJtQixLQUZzQixFQUd0QkosSUFIc0IsRUFJdEJtQixjQUpzQixDQWY1Qjs7VUFBQTtZQWVVSyxTQWZWO1lBcUJVRSxLQXJCVixHQXFCa0I7Y0FBRUMsR0FBRyxFQUFFSCxTQUFQO2NBQWtCSSxLQUFLLEVBQUVDLHVCQUFBLENBQVdOLEdBQVg7WUFBekIsQ0FyQmxCO1lBc0JJVCxnQkFBZ0IsQ0FBQ2dCLFFBQWpCLENBQTBCVCxRQUExQixFQUFvQ0ssS0FBcEM7WUF0QkosaUNBdUJXQSxLQXZCWDs7VUFBQTtZQUFBO1lBQUE7WUF5QklaLGdCQUFnQixDQUFDa0IsUUFBakIsQ0FBMEJYLFFBQTFCO1lBekJKOztVQUFBO1VBQUE7WUFBQTtRQUFBO01BQUE7SUFBQTtFQUFBOztFQThCQSxTQUFlYyxRQUFmO0lBQUE7SUFBQTtJQUFBO01BQUE7UUFBQTtVQUFBO1lBQXdCQyxJQUF4Qiw4REFBK0J2RCxRQUEvQjs7WUFBQSxNQUNNSyxxQkFBQSxDQUFTbUQsRUFBVCxLQUFnQixLQUR0QjtjQUFBO2NBQUE7WUFBQTs7WUFFSSxJQUFBbkIsb0NBQUE7O1lBRkosSUFHU2tCLElBSFQ7Y0FBQTtjQUFBO1lBQUE7O1lBQUEsTUFJWSxJQUFJRSxLQUFKLENBQVUsc0RBQVYsQ0FKWjs7VUFBQTtZQUFBO1lBQUEsbUNBTVVsRSxhQUFhLENBQUNtRSxvQkFBZCxPQUFBbkUsYUFBYSxtQ0FBeUJnRSxJQUFJLENBQUNJLEtBQUwsQ0FBVyxHQUFYLENBQXpCLEVBTnZCOztVQUFBO1VBQUE7WUFBQTtRQUFBO01BQUE7SUFBQTtFQUFBOztFQVVBLFNBQVNDLE9BQVQsQ0FBaUIxQyxJQUFqQixFQUF1QjtJQUNyQixPQUFPMkMsTUFBTSxDQUFDQyxTQUFQLENBQWlCQyxjQUFqQixDQUFnQ0MsSUFBaEMsQ0FBcUNsRSxRQUFyQyxFQUErQ29CLElBQS9DLENBQVA7RUFDRDs7RUFFRCxTQUFTK0MsY0FBVCxHQUEwQjtJQUN4QixPQUFPbkUsUUFBUDtFQUNEOztFQUVELFNBQVNvRSxhQUFULEdBQXlCO0lBQ3ZCLE9BQU85RCxhQUFQO0VBQ0Q7O0VBRURPLElBQUksQ0FBQ3dELE1BQUwsR0FBYyxJQUFBQyxtQkFBQSxFQUEwQnpELElBQTFCLENBQWQ7RUFDQUEsSUFBSSxDQUFDeUMsY0FBTCxHQUFzQkEsY0FBdEI7RUFDQXpDLElBQUksQ0FBQ3lCLGtCQUFMLEdBQTBCQSxrQkFBMUI7RUFDQXpCLElBQUksQ0FBQzJDLFFBQUwsR0FBZ0JBLFFBQWhCO0VBQ0EzQyxJQUFJLENBQUNpRCxPQUFMLEdBQWVBLE9BQWY7RUFDQWpELElBQUksQ0FBQ3NELGNBQUwsR0FBc0JBLGNBQXRCO0VBQ0F0RCxJQUFJLENBQUN1RCxhQUFMLEdBQXFCQSxhQUFyQjtFQUVBLE9BQU92RCxJQUFQO0FBQ0QifQ==

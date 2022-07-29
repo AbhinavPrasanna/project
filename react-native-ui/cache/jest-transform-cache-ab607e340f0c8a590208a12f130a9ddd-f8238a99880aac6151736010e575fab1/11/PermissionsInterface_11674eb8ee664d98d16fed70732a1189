@@ -1,0 +1,14 @@
+0ac45cc5f6ae1aef8b208e95bc75cce5
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.PermissionStatus = void 0;
+var PermissionStatus;
+exports.PermissionStatus = PermissionStatus;
+
+(function (PermissionStatus) {
+  PermissionStatus["GRANTED"] = "granted";
+  PermissionStatus["UNDETERMINED"] = "undetermined";
+  PermissionStatus["DENIED"] = "denied";
+})(PermissionStatus || (exports.PermissionStatus = PermissionStatus = {}));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6Ijs7OztBQUFBLElBQVlBLGdCQUFaOzs7QUFBQSxXQUFZQSxnQkFBWixFQUE0QjtFQUMxQkE7RUFDQUE7RUFDQUE7QUFDRCxDQUpELEVBQVlBLGdCQUFnQixnQ0FBaEJBLGdCQUFnQixNQUE1QiIsIm5hbWVzIjpbIlBlcm1pc3Npb25TdGF0dXMiXSwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vc3JjL1Blcm1pc3Npb25zSW50ZXJmYWNlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBlbnVtIFBlcm1pc3Npb25TdGF0dXMge1xuICBHUkFOVEVEID0gJ2dyYW50ZWQnLFxuICBVTkRFVEVSTUlORUQgPSAndW5kZXRlcm1pbmVkJyxcbiAgREVOSUVEID0gJ2RlbmllZCcsXG59XG5cbmV4cG9ydCB0eXBlIFBlcm1pc3Npb25FeHBpcmF0aW9uID0gJ25ldmVyJyB8IG51bWJlcjtcblxuZXhwb3J0IGludGVyZmFjZSBQZXJtaXNzaW9uUmVzcG9uc2Uge1xuICBzdGF0dXM6IFBlcm1pc3Npb25TdGF0dXM7XG4gIGV4cGlyZXM6IFBlcm1pc3Npb25FeHBpcmF0aW9uO1xuICBncmFudGVkOiBib29sZWFuO1xuICBjYW5Bc2tBZ2FpbjogYm9vbGVhbjtcbn1cbiJdfQ==

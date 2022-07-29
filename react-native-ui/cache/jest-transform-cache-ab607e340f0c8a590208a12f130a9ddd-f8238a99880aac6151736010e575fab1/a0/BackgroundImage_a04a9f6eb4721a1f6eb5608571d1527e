@@ -1,0 +1,12 @@
+ff49b3aaccbd7073116c48d158151ef8
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _reactNative = require("react-native");
+
+var BackgroundImage = _reactNative.ImageBackground || _reactNative.Image;
+var _default = BackgroundImage;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJCYWNrZ3JvdW5kSW1hZ2UiLCJJbWFnZUJhY2tncm91bmQiLCJJbWFnZSJdLCJzb3VyY2VzIjpbIkJhY2tncm91bmRJbWFnZS5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBJbWFnZSwgSW1hZ2VCYWNrZ3JvdW5kIH0gZnJvbSAncmVhY3QtbmF0aXZlJztcbmNvbnN0IEJhY2tncm91bmRJbWFnZSA9IEltYWdlQmFja2dyb3VuZCB8fCBJbWFnZTtcbmV4cG9ydCBkZWZhdWx0IEJhY2tncm91bmRJbWFnZTtcbiJdLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBQTs7QUFDQSxJQUFNQSxlQUFlLEdBQUdDLDRCQUFBLElBQW1CQyxrQkFBM0M7ZUFDZUYsZSJ9
