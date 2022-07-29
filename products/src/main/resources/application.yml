@@ -1,0 +1,26 @@
+# Anything that goes here is made globally for all profiles.
+spring:
+  application:
+    name: products
+
+---
+# Anything that goes here is made specifically for dev's profile.
+spring:
+  profiles: dev
+
+---
+# Anything that goes here is made specifically for clouds's profile.
+# Cloud is the default profile that Google Clound Foundry makes your application use if you do not override it.
+spring:
+  profiles: cloud
+
+---
+# Anything that goes here is made specifically for local's profile.
+spring:
+  profiles: local, default
+  data:
+    mongodb:
+      uri: mongodb://iware_product_service:iwareproductpwd@35.188.166.108/iware_products
+      database: iware_products
+server:
+  port: 8080
